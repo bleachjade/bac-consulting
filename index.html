@@ -143,33 +143,36 @@
 
         <!-- Navigation -->
         <nav class="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 w-full transition-all duration-300">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 lg:py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 lg:py-6">
                 <div class="flex justify-between h-24">
                     <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
                         <!-- Logo -->
-                        <img class="h-20 w-auto" src="logo.png" alt="BAC Business Consulting"
+                        <img class="h-20 md:h-[110px] w-auto" src="logo.png" alt="BAC Business Consulting"
                             onerror="this.onerror=null; this.src='https://placehold.co/200x80/008ecf/ffffff?text=BAC+Consulting';">
                     </div>
 
                     <!-- Desktop Menu -->
                     <div class="hidden md:flex items-center space-x-8">
                         <button onclick="showPage('home')"
-                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-sm uppercase tracking-wide"
+                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="home">Home</button>
                         <button onclick="showPage('about')"
-                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-sm uppercase tracking-wide"
+                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="about">About</button>
                         <button onclick="showPage('services')"
-                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-sm uppercase tracking-wide"
+                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="services">Services</button>
+                        <button onclick="showPage('stories')"
+                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
+                            data-target="stories">Client Success Stories</button>
                         <button onclick="showPage('process')"
-                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-sm uppercase tracking-wide"
+                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="process">Process</button>
                         <button onclick="showPage('blog')"
-                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-sm uppercase tracking-wide"
+                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="blog">Insights</button>
                         <button onclick="showPage('contact')"
-                            class="px-6 py-2.5 bg-bac-title text-white rounded-full hover:bg-bac-dark transition duration-300 font-bold shadow-md transform hover:-translate-y-0.5 text-sm">Book
+                            class="px-6 py-2.5 bg-bac-title uppercase text-white rounded-full hover:bg-bac-dark transition duration-300 font-bold shadow-md transform hover:-translate-y-0.5 text-sm">Book
                             Consultation</button>
                     </div>
 
@@ -192,6 +195,9 @@
                     Us</button>
                 <button onclick="showPage('services'); toggleMobileMenu()"
                     class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Services</button>
+                <button onclick="showPage('stories'); toggleMobileMenu()"
+                    class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Client
+                    Success Stories</button>
                 <button onclick="showPage('process'); toggleMobileMenu()"
                     class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Process</button>
                 <button onclick="showPage('blog'); toggleMobileMenu()"
@@ -208,10 +214,18 @@
     <!-- ========================================== -->
     <main id="home" class="page-section active flex-grow">
         <!-- Modern Hero Section -->
-        <section class="relative bg-white overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-32">
-            <div class="absolute inset-y-0 right-0 w-1/2 bg-gray-50 z-0 hidden lg:block"></div>
+        <section class="relative bg-white overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-24">
+            <div class="absolute right-0 top-0 w-1/2 h-full z-10 bg-white/80 block">
+            </div>
+            <div class="absolute inset-y-0 right-0 w-1/2 bg-gray-50 z-0 hidden lg:block">
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                    <source src="istockphoto-2160472791-640_adpp_is.mp4" type="video/mp4">
+                </video>
+            </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                <!-- Top Section: Text & Graphic -->
+                <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-16">
+                    <!-- Text Side -->
                     <div class="lg:col-span-6 text-left">
                         <div
                             class="inline-block px-3 py-1 bg-blue-50 text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6">
@@ -228,7 +242,7 @@
                             a profitable sale. With decades of experience in allied health, medical and business
                             management, we understand the unique challenges and opportunities in this industry.
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
                             <button onclick="showPage('contact')"
                                 class="px-8 py-4 bg-bac-title text-white rounded-lg hover:bg-bac-dark transition text-center font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                 Book a Consultation Today
@@ -236,8 +250,8 @@
                         </div>
                     </div>
 
+                    <!-- Abstract Graphic Side (Restored) -->
                     <div class="lg:col-span-6 mt-12 lg:mt-0 relative">
-                        <!-- Abstract Graphic Representation -->
                         <div
                             class="relative rounded-2xl bg-white shadow-2xl p-8 border border-gray-100 transform rotate-1 hover:rotate-0 transition duration-500">
                             <div
@@ -269,6 +283,15 @@
                                             success.</p>
                                     </div>
                                 </div>
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
+                                        3</div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-bold text-gray-900">Protect and Future Proof YOUR legacy
+                                        </h4>
+                                    </div>
+                                </div>
                                 <div class="flex items-start">
                                     <div
                                         class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
@@ -295,7 +318,7 @@
                         <div class="text-xs uppercase tracking-wider opacity-70">Years Experience</div>
                     </div>
                     <div>
-                        <div class="text-4xl font-bold text-bac-light mb-1">$35M+</div>
+                        <div class="text-4xl font-bold text-bac-light mb-1">$40M+</div>
                         <div class="text-xs uppercase tracking-wider opacity-70">Revenue Managed</div>
                     </div>
                     <div>
@@ -310,66 +333,68 @@
             </div>
         </div>
 
-        <!-- Video Intro Section (New) -->
+        <!-- Video Intro Section (Side-by-Side Redesign) -->
         <section class="py-20 bg-white border-b border-gray-100">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Video Container -->
-                <div
-                    class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 group h-[400px] md:h-[500px] flex items-center justify-center">
-                    <video src="Optimise with BAC Business Consulting.mp4" className="w-full h-full object-cover"
-                        controls autoPlay muted loop playsInline
-                        poster="https://placehold.co/1200x675/193546/ffffff?text=Video+Loading...">
-                        <!-- <div class="relative w-full" style="padding-top: 56.25%;">
-                        <iframe class="absolute top-0 left-0 w-full h-full p-4"
-                            src="https://www.youtube.com/embed/DLoWVoZFrVk?si=EBDEcEG3wvQMspLt"
-                            title="YouTube video player" frameborder="0"
-                            autoplay
-                            playsinline
-                            loop
-                            mute
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                            poster="https://placehold.co/1200x675/193546/ffffff?text=Video+Loading..."></iframe>
-                    </div> -->
-
-                </div>
-
-                <!-- Video Transcript / Summary -->
-                <div
-                    class="mt-12 bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 md:p-12 border border-blue-100 shadow-sm relative">
-                    <i class="fas fa-quote-right absolute top-8 right-8 text-bac-light opacity-10 text-6xl"></i>
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="h-12 w-12 rounded-full bg-bac-text flex items-center justify-center text-white mr-4 shadow-sm overflow-hidden">
-                            <i class="fas fa-user text-2xl mt-2"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-bac-text">Message from Ben Corso</h4>
-                            <p class="text-sm text-bac-teal font-medium">Founder, BAC Business Consulting</p>
-                        </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Video Player -->
+                    <div
+                        class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 group h-[350px] mt-6 flex items-center justify-center border-4 border-white transform transition duration-500 hover:shadow-3xl">
+                        <video src="Optimise with BAC Business Consulting.mp4" class="w-full h-full object-cover"
+                            controls autoPlay muted loop playsInline
+                            poster="https://placehold.co/1200x675/193546/ffffff?text=Video+Loading...">
+                        </video>
                     </div>
 
-                    <p class="text-xl text-gray-700 italic mb-8 leading-relaxed font-serif">"Hi, I’m Ben Corso. With
-                        over 30 years in physiotherapy and Allied Health, I’ve been in your shoes. I know the industry
-                        inside out, and I’m here to give you proven strategies to grow, scale, and sell for the highest
-                        price."</p>
+                    <!-- Right: Transcript & Message -->
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="h-12 w-12 rounded-full bg-bac-title flex items-center justify-center text-white mr-4 shadow-md">
+                                <i class="fas fa-quote-left text-xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-bac-text">A Message from Ben Corso</h2>
+                                <p class="text-sm text-bac-teal font-medium uppercase tracking-wide">Founder & Principal
+                                    Consultant</p>
+                            </div>
+                        </div>
 
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="flex items-center bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                            <i class="fas fa-check-circle text-bac-teal mr-3 text-xl"></i>
-                            <span class="text-gray-700 font-medium">Built clinics & brand from scratch</span>
+                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-inner relative">
+                            <p class="text-lg text-gray-700 italic mb-6 leading-relaxed font-serif relative z-10">
+                                "Hi, I’m Ben Corso. With over 30 years in physiotherapy and Allied Health, I’ve been in
+                                your shoes. I know the industry inside out, and I’m here to give you proven strategies
+                                to grow, scale, and sell for the highest price."
+                            </p>
+
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
+                                    <span class="text-gray-700 font-medium text-sm">Built clinics & brand from
+                                        scratch</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
+                                    <span class="text-gray-700 font-medium text-sm">Transitioned clinician to
+                                        owner</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
+                                    <span class="text-gray-700 font-medium text-sm">Scaled to multi-site success</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
+                                    <span class="text-gray-700 font-medium text-sm">Sold to major Allied Health
+                                        Group</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex items-center bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                            <i class="fas fa-check-circle text-bac-teal mr-3 text-xl"></i>
-                            <span class="text-gray-700 font-medium">Transitioned clinician to owner</span>
-                        </div>
-                        <div class="flex items-center bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                            <i class="fas fa-check-circle text-bac-teal mr-3 text-xl"></i>
-                            <span class="text-gray-700 font-medium">Scaled to multi-site success</span>
-                        </div>
-                        <div class="flex items-center bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                            <i class="fas fa-check-circle text-bac-teal mr-3 text-xl"></i>
-                            <span class="text-gray-700 font-medium">Sold to major Allied Health Group</span>
+
+                        <div class="mt-8">
+                            <button onclick="showPage('about')"
+                                class="text-bac-title font-bold hover:text-bac-dark flex items-center transition">
+                                Read Full Story <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -395,7 +420,7 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-20">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-bac-text mb-6">Stop Running a Job.<br>Start Building
+                    <h2 class="text-3xl lg:text-4xl font-bold text-bac-text mb-6">Stop Creating a job.<br>Start Building
                         an Asset.</h2>
                     <p class="text-xl text-gray-600 max-w-2xl mx-auto">Most practice owners struggle to balance clinical
                         work with business strategy. The result? A business that relies entirely on them.</p>
@@ -514,74 +539,128 @@
         <section class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center text-bac-text mb-16">Client Success Stories</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
                     <!-- Peter Tziavrangos -->
-                    <div class="bg-gray-50 p-8 rounded-2xl relative">
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                         <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <p class="italic text-gray-700 mb-6 text-sm relative z-10 pl-6">"Ben is an experienced and
-                            respected Physiotherapist and business owner. He's seen and done it all... Having known Ben
-                            all of my career and using him as a sounding board many times, I can highly recommend his
-                            services."</p>
-                        <div class="pl-6 border-l-2 border-bac-teal">
-                            <div class="font-bold text-bac-text text-sm">Peter Tziavrangos</div>
-                            <div class="text-xs text-gray-500">Managing Director, Move for Better Health</div>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben is an experienced and
+                                respected Physiotherapist and business owner. He's seen and done it all... Having known
+                                Ben all of my career and using him as a sounding board many times, I can highly
+                                recommend his services."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Peter Tziavrangos
+                            </div>
+                            <div class="text-xs text-gray-500 space-y-1.5">
+                                <p class="font-medium text-gray-600">Managing Director, Move for Better Health</p>
+                                <p>Non-Exec Director & VP, Australian Physiotherapy Assoc.</p>
+                                <p>Non-Exec Director, Australian Physiotherapy Council</p>
+                            </div>
                         </div>
                     </div>
+
                     <!-- Antony Hirst -->
-                    <div class="bg-gray-50 p-8 rounded-2xl relative">
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                         <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <p class="italic text-gray-700 mb-6 text-sm relative z-10 pl-6">"His knowledge of the corporate
-                            sector is immense. I have absolutely no hesitation in recommending anyone to use his
-                            services... you will get a handsome return for your investment."</p>
-                        <div class="pl-6 border-l-2 border-bac-teal">
-                            <div class="font-bold text-bac-text text-sm">Antony Hirst</div>
-                            <div class="text-xs text-gray-500">Chair National Business Group, APA</div>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"His knowledge of the corporate
+                                sector is immense. I have absolutely no hesitation in recommending anyone to use his
+                                services... you will get a handsome return for your investment."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Antony Hirst
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Chair National Business Group, APA</div>
                         </div>
                     </div>
+
                     <!-- Bill McTigue -->
-                    <div class="bg-gray-50 p-8 rounded-2xl relative">
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                         <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <p class="italic text-gray-700 mb-6 text-sm relative z-10 pl-6">"I have worked with Ben Corso...
-                            for over 15 years. I have watched him grow a private allied health practice... and then sell
-                            to an aggregator. I have also been the beneficiary of his advice in my own practice."</p>
-                        <div class="pl-6 border-l-2 border-bac-teal">
-                            <div class="font-bold text-bac-text text-sm">Bill McTigue</div>
-                            <div class="text-xs text-gray-500">Director, Mentone Physio</div>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"I have worked with Ben Corso...
+                                for over 15 years. I have watched him grow a private allied health practice... and then
+                                sell to an aggregator. I have also been the beneficiary of his advice in my own
+                                practice."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Bill McTigue
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Director, Mentone Physio</div>
                         </div>
                     </div>
+
                     <!-- Annette Tonkin -->
-                    <div class="bg-gray-50 p-8 rounded-2xl relative">
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                         <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <p class="italic text-gray-700 mb-6 text-sm relative z-10 pl-6">"Ben's honesty and strategic
-                            clarity will give you the confidence to move forward with purpose. Whether you're
-                            considering a sale, navigating growth stages, or planning your exit strategy."</p>
-                        <div class="pl-6 border-l-2 border-bac-teal">
-                            <div class="font-bold text-bac-text text-sm">Annette Tonkin</div>
-                            <div class="text-xs text-gray-500">Thinking Physio</div>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben's honesty and strategic
+                                clarity will give you the confidence to move forward with purpose. Whether you're
+                                considering a sale, navigating growth stages, or planning your exit strategy."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Annette Tonkin
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Thinking Physio</div>
                         </div>
                     </div>
+
                     <!-- Phil Calvert -->
-                    <div class="bg-gray-50 p-8 rounded-2xl relative">
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                         <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <p class="italic text-gray-700 mb-6 text-sm relative z-10 pl-6">"Critically Ben is able to
-                            distil what is really important and provide outcome focussed strategies that work... Our
-                            team would highly recommend Ben."</p>
-                        <div class="pl-6 border-l-2 border-bac-teal">
-                            <div class="font-bold text-bac-text text-sm">Assoc. Prof. Phil Calvert</div>
-                            <div class="text-xs text-gray-500">Chair, ACSEP & Director, Children’s Physio SA</div>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"Critically Ben is able to
+                                distil what is really important and provide outcome focussed strategies that work... Our
+                                team would highly recommend Ben."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Assoc. Prof. Phil Calvert
+                            </div>
+                            <div class="text-xs text-gray-500 space-y-1.5">
+                                <p class="font-medium text-gray-600">Chair, Australasian College of Sport & Exercise
+                                    Physicians</p>
+                                <p>Past President, Australian Physiotherapy Assoc.</p>
+                                <p>Director, Children’s Physio SA</p>
+                            </div>
                         </div>
                     </div>
+
                     <!-- David Giles -->
-                    <div class="bg-gray-50 p-8 rounded-2xl relative">
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                         <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <p class="italic text-gray-700 mb-6 text-sm relative z-10 pl-6">"His strategic insight has
-                            played a meaningful role in shaping our growth... from assessing the benefits of purchasing
-                            a commercial property to navigating the complexities of a purpose-built clinic."</p>
-                        <div class="pl-6 border-l-2 border-bac-teal">
-                            <div class="font-bold text-bac-text text-sm">David Giles</div>
-                            <div class="text-xs text-gray-500">Director, The Injury Hub</div>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"His strategic insight has
+                                played a meaningful role in shaping our growth... from assessing the benefits of
+                                purchasing a commercial property to navigating the complexities of a purpose-built
+                                clinic."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                David Giles
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Director, The Injury Hub</div>
                         </div>
                     </div>
+                </div>
+
+                <!-- See Full Stories Button -->
+                <div class="mt-16 text-center">
+                    <button onclick="showPage('stories')"
+                        class="px-8 py-3 bg-white text-bac-title border-2 border-bac-title rounded-full font-bold hover:bg-blue-50 transition transform hover:-translate-y-0.5 shadow-sm">
+                        See Full Stories
+                    </button>
                 </div>
             </div>
         </section>
@@ -601,6 +680,7 @@
     <!-- ========================================== -->
     <!-- PAGE 2: BLOG / INSIGHTS (NEW) -->
     <!-- ========================================== -->
+
     <main id="blog" class="page-section flex-grow">
         <!-- Blog Header -->
         <section class="bg-bac-text py-20">
@@ -721,7 +801,6 @@
             </div>
         </section>
     </main>
-
     <!-- ========================================== -->
     <!-- PAGE: BLOG DETAIL VIEW (Dynamic) -->
     <!-- ========================================== -->
@@ -762,6 +841,151 @@
                 </article>
             </div>
         </div>
+    </main>
+
+
+    <!-- ========================================== -->
+    <!-- PAGE: SUCCESS STORIES (NEW) -->
+    <!-- ========================================== -->
+    <main id="stories" class="page-section flex-grow">
+        <!-- Header -->
+        <section class="bg-bac-text py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl font-bold text-white mb-4">Client Success Stories</h1>
+                <p class="text-xl text-bac-light max-w-2xl mx-auto">Hear from the allied health practice owners we've
+                    helped transition, grow, and sell.</p>
+            </div>
+        </section>
+
+        <!-- Stories Grid -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+                    <!-- Peter Tziavrangos -->
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben is an experienced and
+                                respected Physiotherapist and business owner. He's seen and done it all... Having known
+                                Ben all of my career and using him as a sounding board many times, I can highly
+                                recommend his services."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Peter Tziavrangos
+                            </div>
+                            <div class="text-xs text-gray-500 space-y-1.5">
+                                <p class="font-medium text-gray-600">Managing Director, Move for Better Health</p>
+                                <p>Non-Exec Director & VP, Australian Physiotherapy Assoc.</p>
+                                <p>Non-Exec Director, Australian Physiotherapy Council</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Antony Hirst -->
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"His knowledge of the corporate
+                                sector is immense. I have absolutely no hesitation in recommending anyone to use his
+                                services... you will get a handsome return for your investment."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Antony Hirst
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Chair National Business Group, APA</div>
+                        </div>
+                    </div>
+
+                    <!-- Bill McTigue -->
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"I have worked with Ben Corso...
+                                for over 15 years. I have watched him grow a private allied health practice... and then
+                                sell to an aggregator. I have also been the beneficiary of his advice in my own
+                                practice."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Bill McTigue
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Director, Mentone Physio</div>
+                        </div>
+                    </div>
+
+                    <!-- Annette Tonkin -->
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben's honesty and strategic
+                                clarity will give you the confidence to move forward with purpose. Whether you're
+                                considering a sale, navigating growth stages, or planning your exit strategy."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Annette Tonkin
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Thinking Physio</div>
+                        </div>
+                    </div>
+
+                    <!-- Phil Calvert -->
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"Critically Ben is able to
+                                distil what is really important and provide outcome focussed strategies that work... Our
+                                team would highly recommend Ben."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                Assoc. Prof. Phil Calvert
+                            </div>
+                            <div class="text-xs text-gray-500 space-y-1.5">
+                                <p class="font-medium text-gray-600">Chair, Australasian College of Sport & Exercise
+                                    Physicians</p>
+                                <p>Past President, Australian Physiotherapy Assoc.</p>
+                                <p>Director, Children’s Physio SA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- David Giles -->
+                    <div
+                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
+                        <div class="relative z-10 pl-6 mb-6 flex-grow">
+                            <p class="italic text-gray-700 text-sm leading-relaxed">"His strategic insight has
+                                played a meaningful role in shaping our growth... from assessing the benefits of
+                                purchasing a commercial property to navigating the complexities of a purpose-built
+                                clinic."</p>
+                        </div>
+                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
+                            <div class="font-bold text-bac-text text-sm mb-1">
+                                David Giles
+                            </div>
+                            <div class="text-xs text-gray-500 font-medium">Director, The Injury Hub</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Ready to be our next success story? We work with
+                        practice owners across Australia to achieve exceptional results.</p>
+                    <button onclick="showPage('contact')"
+                        class="px-10 py-4 bg-bac-title text-white rounded-full font-bold shadow-lg hover:bg-bac-dark transition transform hover:-translate-y-1">
+                        Book Your Consultation
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- ========================================== -->
@@ -823,9 +1047,10 @@
                                 like many of you, I had to learn business the hard way.</p>
                             <p>Starting with no business plan and doing the books at night, I eventually grew "The
                                 Physio Clinic" from a single room to a multi-site, multi-disciplinary operation
-                                generating over <strong class="text-bac-text">$2.2M in revenue</strong>.</p>
+                                generating <strong class="text-bac-text">> $4.5M in revenue</strong>.</p>
                             <p>In 2021, I successfully sold the business to Australia’s largest integrated Allied Health
-                                Group and transitioned into a General Manager role overseeing 30+ clinics. Now, I use
+                                Group and transitioned into a Regional and then General Manager role with this company
+                                overseeing 30+ clinics and > $40M in revenue. Now, I use
                                 that experience to help you achieve the same success.</p>
 
                             <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-bac-title mt-8">
@@ -844,16 +1069,14 @@
                             </div>
 
                             <!-- New Visual Journey Grid -->
-                            <div class="grid grid-cols-3 gap-4 mt-8">
-                                <img src="https://placehold.co/400x300/e2e8f0/193546?text=Clinic+Interior"
-                                    alt="Clinic Interior"
-                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-32 w-full">
-                                <img src="https://placehold.co/400x300/e2e8f0/193546?text=Team+Leadership"
-                                    alt="Team Leadership"
-                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-32 w-full">
-                                <img src="https://placehold.co/400x300/e2e8f0/193546?text=Strategic+Growth"
-                                    alt="Strategic Growth"
-                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-32 w-full">
+                            <div class="grid grid-cols-3 gap-4 mt-4">
+                                <img src="the-physio-clinic-prospect-front-e1604278217879-768x512.png"
+                                    alt="Clinic Exterior"
+                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-40 w-full">
+                                <img src="Reception.jpg" alt="Reception image"
+                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-40 w-full">
+                                <img src="20220728_082636.jpg" alt="Clinic Interior"
+                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-40 w-full">
                             </div>
                         </div>
                     </div>
@@ -861,16 +1084,140 @@
             </div>
         </section>
 
-        <!-- Timeline Section (Replaced with Image) -->
+        <!-- Timeline Section -->
         <section class="py-16 bg-gray-50">
-            <div class="mx-auto text-center">
-                <h2 class="text-3xl font-bold text-center text-bac-text mb-12">Career & Business Timeline</h2>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-bac-text mb-16">Career & Business Timeline</h2>
 
-                <div class="relative w-full overflow-hidden h-[calc(100vh-128px)] rounded-lg">
-                    <!-- Timeline Image -->
-                    <img src="3064582 BAC WEB.jpg" alt="Ben Corso Career and Business Timeline"
-                        class="rounded-lg h-[calc(100vh-128px)] object-contain mx-auto"
-                        onerror="this.onerror=null; this.src='https://placehold.co/1200x600/f1f5f9/1e293b?text=Timeline+Image+Placeholder';">
+                <div class="relative">
+                    <!-- Vertical Line -->
+                    <div
+                        class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform md:-translate-x-1/2">
+                    </div>
+
+                    <!-- Item 1: 1992-1995 -->
+                    <div class="relative z-10 mb-12">
+                        <div class="md:flex items-center justify-between">
+                            <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-light rounded-full border-4 border-white shadow"></span>
+                                <h3 class="text-xl font-bold text-bac-title">1992 - 1995</h3>
+                                <h4 class="font-bold text-bac-text mt-1">Education & Excellence</h4>
+                                <p class="text-gray-600 text-sm mt-2">Commenced and graduated Bachelor of Applied
+                                    Science in Physiotherapy from UniSA.</p>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: 1997-2000 -->
+                    <div class="relative z-10 mb-12">
+                        <div class="md:flex items-center justify-between flex-row-reverse">
+                            <div class="md:w-1/2 md:pl-12 pl-12 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-[-7px] w-4 h-4 bg-bac-title rounded-full border-4 border-white shadow"></span>
+                                <h3 class="text-xl font-bold text-bac-title">1996 - 2000</h3>
+                                <h4 class="font-bold text-bac-text mt-1">Early Career & Global Experience</h4>
+                                <p class="text-gray-600 text-sm mt-2">Worked in Australian public health and UK
+                                    hospitals/private practice before returning to Adelaide.</p>
+                            </div>
+                            <div class="md:w-1/2 md:pr-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: 2001-2003 -->
+                    <div class="relative z-10 mb-12">
+                        <div class="md:flex items-center justify-between">
+                            <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-dark rounded-full border-4 border-white shadow"></span>
+                                <h3 class="text-xl font-bold text-bac-title">2001 - 2003</h3>
+                                <h4 class="font-bold text-bac-text mt-1">Founding & First Clinics</h4>
+                                <p class="text-gray-600 text-sm mt-2">Founded Ben Corso Physiotherapy. Completed Masters. Opened first two private practices in North Adelaide & SA Golf Clinic.</p>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: 2005-2011 -->
+                    <div class="relative z-10 mb-12">
+                        <div class="md:flex items-center justify-between flex-row-reverse">
+                            <div class="md:w-1/2 md:pl-12 pl-12 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-[-7px] w-4 h-4 bg-bac-teal rounded-full border-4 border-white shadow"></span>
+                                <h3 class="text-xl font-bold text-bac-title">2005 - 2011</h3>
+                                <h4 class="font-bold text-bac-text mt-1">Growth & Rebrand</h4>
+                                <p class="text-gray-600 text-sm mt-2">Expanded North Adelaide site. Rebranded to "The
+                                    Physio Clinic". Built purpose-built facility in Prospect.</p>
+                            </div>
+                            <div class="md:w-1/2 md:pr-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: 2014-2019 -->
+                    <div class="relative z-10 mb-12">
+                        <div class="md:flex items-center justify-between">
+                            <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-tealdark rounded-full border-4 border-white shadow"></span>
+                                <h3 class="text-xl font-bold text-bac-title">2014 - 2019</h3>
+                                <h4 class="font-bold text-bac-text mt-1">Scaling Up</h4>
+                                <p class="text-gray-600 text-sm mt-2">Opened sites in Toorak Gardens & Belair. Acquired
+                                    Blackwood business.</p>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: 2021 -->
+                    <div class="relative z-10 mb-12">
+                        <div class="md:flex items-center justify-between flex-row-reverse">
+                            <div class="md:w-1/2 md:pl-12 pl-12 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-[-7px] w-4 h-4 bg-bac-title rounded-full border-4 border-white shadow"></span>
+                                <h3 class="text-xl font-bold text-bac-title">2021</h3>
+                                <h4 class="font-bold text-bac-text mt-1">Acquisition & Leadership</h4>
+                                <p class="text-gray-600 text-sm mt-2">Acquisition by Healthia Ltd. Appointed Regional
+                                    Manager overseeing 15+ clinics, > $15M portfolio, and 200+ team members.</p>
+                            </div>
+                            <div class="md:w-1/2 md:pr-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 7: 2023 -->
+                    <div class="relative z-10 mb-12">
+                        <div class="md:flex items-center justify-between">
+                            <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-dark rounded-full border-4 border-white shadow"></span>
+                                <h3 class="text-xl font-bold text-bac-title">2023</h3>
+                                <h4 class="font-bold text-bac-text mt-1">General Manager Role</h4>
+                                <p class="text-gray-600 text-sm mt-2">Appointed General Manager & Group Partner at
+                                    Healthia. Managed 30+ clinics, > $40M revenue, and 500+ team members.</p>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+
+                    <!-- Item 8: 2026 -->
+                    <div class="relative z-10">
+                        <div class="md:flex items-center justify-between flex-row-reverse">
+                            <div class="md:w-1/2 md:pl-12 pl-12 relative">
+                                <span
+                                    class="absolute left-[-5px] top-1.5 md:left-[-12px] w-6 h-6 bg-bac-teal rounded-full border-4 border-white shadow animate-pulse"></span>
+                                <h3 class="text-2xl font-bold text-bac-teal">2026</h3>
+                                <h4 class="font-bold text-bac-text mt-1">BAC Business Consulting</h4>
+                                <p class="text-gray-600 text-sm mt-2">Launched BAC Business Consulting to help business
+                                    owners achieve similar pathways
+                                    <br />
+                                    Foundation clinics now generate >$4.5m in revenue and are managed by equity partners
+                                    and Team Leaders.
+                                </p>
+                            </div>
+                            <div class="md:w-1/2 md:pr-12"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -896,96 +1243,146 @@
         <!-- Services Hero -->
         <section class="py-20 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h1 class="text-4xl font-bold text-bac-text mb-6">Consulting Services</h1>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                        We offer a range of consultancy services designed to meet your business goals. Whether you are
-                        looking to:
-                    </p>
 
-                    <!-- Goal Checklist -->
-                    <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base font-medium text-gray-700">
-                        <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200"><i
-                                class="fas fa-check text-bac-teal mr-2"></i>Transition from clinician to owner</span>
-                        <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200"><i
-                                class="fas fa-check text-bac-teal mr-2"></i>Build a clinic & brand</span>
-                        <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200"><i
-                                class="fas fa-check text-bac-teal mr-2"></i>Scale to multi-site success</span>
-                        <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200"><i
-                                class="fas fa-check text-bac-teal mr-2"></i>Prepare to Sell</span>
-                        <span class="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200"><i
-                                class="fas fa-check text-bac-teal mr-2"></i>Maximise business value</span>
+                <!-- Intro Split Layout with Image -->
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center mb-20">
+                    <div>
+                        <div
+                            class="inline-block px-3 py-1 bg-white text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100 shadow-sm">
+                            Tailored Solutions
+                        </div>
+                        <h1 class="text-4xl font-bold text-bac-text mb-6">Consulting Services</h1>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            We offer a range of consultancy services designed to meet your specific business goals.
+                            Whether you are looking to transition, scale, or exit, we have a roadmap for you.
+                        </p>
+
+                        <!-- Goal Checklist (Vertical for better layout here) -->
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-check text-bac-teal text-xs"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700 font-medium">Transition from clinician to business
+                                    owner</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-check text-bac-teal text-xs"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700 font-medium">Build a clinic & brand from scratch</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-check text-bac-teal text-xs"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700 font-medium">Scale to multi-site success</span>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-check text-bac-teal text-xs"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700 font-medium">Prepare to Sell & Maximise Value</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div class="mt-12 lg:mt-0 relative">
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-bac-light/20 rounded-full blur-xl"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-bac-teal/20 rounded-full blur-xl"></div>
+                        <img src="donbrice-8391.jpg" alt="Strategic Consulting"
+                            class="relative rounded-2xl shadow-2xl border-4 border-white w-full object-cover h-[400px]">
                     </div>
                 </div>
 
                 <!-- Tiers Grid (Existing) -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
                     <!-- Tier 1 -->
                     <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-light hover:-translate-y-1 transition duration-300 h-full flex flex-col">
-                        <div class="mb-4">
+                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-light transition duration-300 h-full flex flex-col">
+                        <div class="mb-2">
                             <span class="text-xs font-bold text-bac-light uppercase tracking-wider">Tier 1</span>
-                            <h3 class="text-xl font-bold text-bac-text mt-1">Business Consultancy</h3>
+                            <h3 class="text-lg font-bold text-bac-text mt-1">Business consulting to read</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-6 flex-grow">Foundational support for practices looking to
+                        <p class="text-sm text-gray-600 mb-6">Foundational support for practices looking to
                             professionalize.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Transition
-                                support</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Leadership
-                                development</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Commercial
-                                advisory</li>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
+                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Business
+                                advisory support</li>
+                            <li class="flex items-start"><i
+                                    class="fas fa-check text-bac-teal mr-2 mt-1"></i>Operational, strategic and
+                                commercial</li>
+                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Business
+                                sales marketing</li>
+                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Business
+                                exit planning (non-financial product)</li>
                         </ul>
+                        <button onclick="showPage('contact')"
+                            class="w-full py-2 border-2 border-bac-light text-bac-light font-bold rounded-lg hover:bg-bac-light hover:text-white transition mt-auto">
+                            Enquire Now
+                        </button>
                     </div>
 
                     <!-- Tier 2 -->
                     <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-title hover:-translate-y-1 transition duration-300 h-full flex flex-col relative overflow-hidden">
+                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-title transition duration-300 h-full flex flex-col relative overflow-hidden">
                         <div class="absolute top-0 right-0 bg-bac-title text-white text-xs px-2 py-1 rounded-bl">Popular
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-2">
                             <span class="text-xs font-bold text-bac-title uppercase tracking-wider">Tier 2</span>
-                            <h3 class="text-xl font-bold text-bac-text mt-1">Immediate Sale</h3>
+                            <h3 class="text-lg font-bold text-bac-text mt-1">Immediate Sale</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-6 flex-grow">For owners ready to list and sell now.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p class="text-sm text-gray-600 mb-6">For owners ready to list and sell now.</p>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Health
                                 Check</li>
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Sale
                                 Readiness Assessment</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Buyer
-                                Liaison</li>
                         </ul>
+                        <button onclick="showPage('contact')"
+                            class="w-full py-2 border-2 border-bac-title text-bac-title font-bold rounded-lg hover:bg-bac-title hover:text-white transition mt-auto">
+                            Enquire Now
+                        </button>
                     </div>
 
                     <!-- Tier 3 -->
                     <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-dark hover:-translate-y-1 transition duration-300 h-full flex flex-col">
-                        <div class="mb-4">
+                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-dark transition duration-300 h-full flex flex-col">
+                        <div class="mb-2">
                             <span class="text-xs font-bold text-bac-dark uppercase tracking-wider">Tier 3</span>
-                            <h3 class="text-xl font-bold text-bac-text mt-1">12-Month Prep</h3>
+                            <h3 class="text-lg font-bold text-bac-text mt-1">12-Month Prep</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-6 flex-grow">Maximize value over a 12-month horizon.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p class="text-sm text-gray-600 mb-6">Maximize value over a 12-month horizon.</p>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Normalizing
                                 P&L</li>
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Financial
                                 Optimisation</li>
+                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Protect and
+                                future proof YOUR legacy</li>
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Includes
                                 Tier 2</li>
                         </ul>
+                        <button onclick="showPage('contact')"
+                            class="w-full py-2 border-2 border-bac-dark text-bac-dark font-bold rounded-lg hover:bg-bac-dark hover:text-white transition mt-auto">
+                            Enquire Now
+                        </button>
                     </div>
 
                     <!-- Tier 4 -->
                     <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-tealdark hover:-translate-y-1 transition duration-300 h-full flex flex-col">
-                        <div class="mb-4">
+                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-tealdark transition duration-300 h-full flex flex-col">
+                        <div class="mb-2">
                             <span class="text-xs font-bold text-bac-tealdark uppercase tracking-wider">Tier 4</span>
-                            <h3 class="text-xl font-bold text-bac-text mt-1">Growth (3-5 Years)</h3>
+                            <h3 class="text-lg font-bold text-bac-text mt-1">Growth (3-5 Years)</h3>
                         </div>
-                        <p class="text-sm text-gray-600 mb-6 flex-grow">Long-term strategic partnership to scale.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                        <p class="text-sm text-gray-600 mb-6">Long-term strategic partnership to scale.</p>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Multi-site
                                 scaling</li>
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Deep
@@ -993,6 +1390,42 @@
                             <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Long-term
                                 exit plan</li>
                         </ul>
+                        <button onclick="showPage('contact')"
+                            class="w-full py-2 border-2 border-bac-tealdark text-bac-tealdark font-bold rounded-lg hover:bg-bac-tealdark hover:text-white transition mt-auto">
+                            Enquire Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery / Impact Section (New) -->
+        <section class="py-12 bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                        <img src="https://media.istockphoto.com/id/1385970223/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B5%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%81%E0%B8%A5%E0%B8%A2%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C.jpg?s=2048x2048&w=is&k=20&c=dUAolmDJcpCD3zv10fJPTI1Jyai8KwKW8Xqu2cUEAGM="
+                            alt="Strategic Planning"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <span class="text-white font-bold text-lg">Strategic Planning</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                        <img src="https://media.istockphoto.com/id/2058319417/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%83%E0%B8%9A%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%82%E0%B8%A7%E0%B9%89%E0%B9%81%E0%B8%82%E0%B8%99%E0%B8%A2%E0%B8%B4%E0%B9%89%E0%B8%A1%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B9%8D%E0%B8%B2%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%9C.jpg?s=2048x2048&w=is&k=20&c=ZIBroCCDVqD3CTfXa03NsbFf770NjU-yLEo7r82gglE="
+                            alt="Operational Efficiency"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <span class="text-white font-bold text-lg">Operational Efficiency</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                        <img src="https://media.istockphoto.com/id/1407488333/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%96%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%8D%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B8%9A%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B9%83%E0%B8%99.jpg?s=2048x2048&w=is&k=20&c=fuOYDyCjPyL2zL9TAxNkShNiBsoTK1hMc-8McTCuQ_A="
+                            alt="Maximizing Value"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <span class="text-white font-bold text-lg">Maximizing Value</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1003,11 +1436,12 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl font-bold text-bac-text mb-4">How We Support You</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">From valuation to final negotiation, we specialize in
+                    <p class="text-gray-600 max-w-2xl mx-auto">From business transition to exit planning, we specialize
+                        in
                         helping Allied Health business owners navigate the complexities of a sale.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-2 gap-8">
                     <div class="flex">
                         <div class="flex-shrink-0 mr-4">
                             <div
@@ -1041,41 +1475,14 @@
                         <div class="flex-shrink-0 mr-4">
                             <div
                                 class="w-12 h-12 bg-blue-50 text-bac-title rounded-lg flex items-center justify-center text-xl">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-bac-text mb-2">Sales Prospectus</h4>
-                            <p class="text-sm text-gray-600">We create a professional information pack highlighting your
-                                team, service mix, and growth opportunities for interested buyers.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex">
-                        <div class="flex-shrink-0 mr-4">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-bac-title rounded-lg flex items-center justify-center text-xl">
                                 <i class="fas fa-filter"></i>
                             </div>
                         </div>
                         <div>
                             <h4 class="text-lg font-bold text-bac-text mb-2">Screening Enquiries</h4>
-                            <p class="text-sm text-gray-600">We handle initial buyer enquiries so you can stay focused
-                                on treating patients without distraction.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex">
-                        <div class="flex-shrink-0 mr-4">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-bac-title rounded-lg flex items-center justify-center text-xl">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-bac-text mb-2">Negotiation Support</h4>
-                            <p class="text-sm text-gray-600">We work closely with you to secure the best price and
-                                terms. You choose your level of involvement.</p>
+                            <p class="text-sm text-gray-600">We handle initial enquiries so you can stay focused on
+                                running your practice and we work with your sales team such as your business broker to
+                                progress these enquiries and execute a sale.</p>
                         </div>
                     </div>
 
@@ -1087,9 +1494,9 @@
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-lg font-bold text-bac-text mb-2">Legal & Admin</h4>
-                            <p class="text-sm text-gray-600">We collaborate with legal and accounting teams to ensure
-                                smooth transfer of leases and contracts.</p>
+                            <h4 class="text-lg font-bold text-bac-text mb-2">Legal/Accountant/Business Broker</h4>
+                            <p class="text-sm text-gray-600">We collaborate with your legal, accounting and business
+                                broker as required to ensure a smooth sales process.</p>
                         </div>
                     </div>
                 </div>
@@ -1116,10 +1523,56 @@
     <main id="process" class="page-section flex-grow">
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-20">
-                    <h1 class="text-4xl font-bold text-bac-text mb-4">Sale Preparation Roadmap</h1>
-                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">A structured 9-step journey to maximize value and
-                        ensure a seamless exit.</p>
+                <!-- Process Hero Split -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div>
+                        <div
+                            class="inline-block px-3 py-1 bg-blue-50 text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100 shadow-sm">
+                            The Roadmap
+                        </div>
+                        <h1 class="text-4xl font-bold text-bac-text mb-6">Sale Preparation Roadmap</h1>
+                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                            Selling your practice is a journey, not an event. We use a structured 9-step process to
+                            maximize your business value and ensure a seamless exit.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Visual Phase Grid -->
+                <div class="grid md:grid-cols-3 gap-8 mb-24">
+                    <!-- Phase 1 Image -->
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg h-64 border border-gray-100">
+                        <img src="https://media.istockphoto.com/id/2203914027/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%8D%E0%B8%B2%E0%B9%80%E0%B8%AA%E0%B8%99%E0%B8%AD%E0%B8%97%E0%B8%B5%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%99%E0%B9%8D%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%83%E0%B8%99%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%A2.jpg?s=2048x2048&w=is&k=20&c=DT2CwOhaE1KlOCVaKAbUkRZoQ8t3jR_kWq_ORSxqZic="
+                            alt="Preparation Phase"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-bac-light/60 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-white text-xs font-bold uppercase tracking-wider mb-1">Phase 1</span>
+                            <h3 class="text-white font-bold text-xl">Preparation</h3>
+                        </div>
+                    </div>
+                    <!-- Phase 2 Image -->
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg h-64 border border-gray-100">
+                        <img src="https://media.istockphoto.com/id/2073485467/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%A1%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B4%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B8%AB%E0%B9%8C%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%A0%E0%B8%B9.jpg?s=2048x2048&w=is&k=20&c=vZxZpB-zcBw3Pwr3PmSkF5Bev5uBvu5AHEG7Jj2psOs="
+                            alt="Strategy Phase"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-bac-title/60 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-white text-xs font-bold uppercase tracking-wider mb-1">Phase 2</span>
+                            <h3 class="text-white font-bold text-xl">Strategy</h3>
+                        </div>
+                    </div>
+                    <!-- Phase 3 Image -->
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg h-64 border border-gray-100">
+                        <img src="https://media.istockphoto.com/id/2184295789/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B9%83%E0%B8%99%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99.jpg?s=2048x2048&w=is&k=20&c=ccSm_xLb7J3PNo47A-AmttPBrDUVJN9Y-vSrs9dvUjY="
+                            alt="Execution Phase"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-bac-teal/60 to-transparent flex flex-col justify-end p-6">
+                            <span class="text-white text-xs font-bold uppercase tracking-wider mb-1">Phase 3</span>
+                            <h3 class="text-white font-bold text-xl">Execution</h3>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Vertical Timeline Container -->
@@ -1273,6 +1726,15 @@
                         </div>
                     </div>
 
+                    <div class="mb-12 relative">
+                        <div
+                            class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-top-16 mb-8 md:mb-0 text-center">
+                            <span
+                                class="inline-block px-4 py-1 rounded-full bg-gray-100 text-xs font-semibold tracking-wider">REFER
+                                TO SALES TEAM eg Business Broker</span>
+                        </div>
+                    </div>
+
                     <!-- Step 6 -->
                     <div class="relative z-10 mb-12 md:mb-24">
                         <div class="md:flex items-center justify-between">
@@ -1290,8 +1752,7 @@
                             </div>
                             <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
                                 <h3 class="text-xl font-bold text-bac-text">Marketing & Screening</h3>
-                                <p class="text-gray-600 mt-2">Listing on BAC website and screening initial buyer
-                                    enquiries.</p>
+                                <p class="text-gray-600 mt-2">Listing.</p>
                             </div>
                         </div>
                     </div>
@@ -1448,6 +1909,54 @@
         </section>
     </main>
 
+    <!-- ========================================== -->
+    <!-- PAGE: DISCLAIMER -->
+    <!-- ========================================== -->
+    <main id="disclaimer" class="page-section flex-grow">
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-bac-text mb-6">Disclaimer</h1>
+                    <p class="text-xl text-gray-600">Important information regarding our services and advice.</p>
+                </div>
+
+                <div class="prose prose-lg text-gray-600 mx-auto">
+                    <h3 class="text-bac-title font-bold mb-4">General Advice Warning</h3>
+                    <p>The information provided on this website and during consultations is for general informational
+                        purposes only. It is not intended to be a substitute for professional legal, financial, or
+                        accounting advice. While we strive to keep the information up to date and correct, we make no
+                        representations or warranties of any kind, express or implied, about the completeness, accuracy,
+                        reliability, suitability, or availability with respect to the website or the information,
+                        products, services, or related graphics contained on the website for any purpose.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">No Guarantees</h3>
+                    <p>Any reliance you place on such information is therefore strictly at your own risk. BAC Business
+                        Consulting cannot guarantee specific results or outcomes from our services, as success depends
+                        on numerous factors including market conditions, your own efforts, and other variables beyond
+                        our control.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Professional Consultation</h3>
+                    <p>We strongly recommend that you consult with your own legal, financial, and accounting
+                        professionals before making any significant business decisions, such as selling your practice or
+                        restructuring your business. BAC Business Consulting is not a licensed financial advisor,
+                        lawyer, or accountant.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Limitation of Liability</h3>
+                    <p>In no event will we be liable for any loss or damage including without limitation, indirect or
+                        consequential loss or damage, or any loss or damage whatsoever arising from loss of data or
+                        profits arising out of, or in connection with, the use of this website or our services.</p>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button onclick="showPage('contact')"
+                        class="px-8 py-3 bg-bac-title text-white rounded-full font-bold hover:bg-bac-dark shadow-md transition">
+                        Contact Us for Clarification
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer class="bg-bac-text text-white py-12 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1460,19 +1969,24 @@
                 <div>
                     <h4 class="font-bold mb-4 text-bac-light">Quick Links</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><button onclick="showPage('home')" class="hover:text-white">Home</button></li>
-                        <li><button onclick="showPage('about')" class="hover:text-white">About Us</button></li>
-                        <li><button onclick="showPage('services')" class="hover:text-white">Services</button></li>
-                        <li><button onclick="showPage('blog')" class="hover:text-white">Insights</button></li>
+                        <li><button onclick="showPage('home')" class="hover:text-white transition">Home</button></li>
+                        <li><button onclick="showPage('about')" class="hover:text-white transition">About Us</button>
+                        </li>
+                        <li><button onclick="showPage('services')" class="hover:text-white transition">Services</button>
+                        </li>
+                        <li><button onclick="showPage('blog')" class="hover:text-white transition">Insights</button>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4 text-bac-light">Resources</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><button onclick="showPage('process')" class="hover:text-white">Sales Process</button></li>
-                        <li><button onclick="showPage('process')" class="hover:text-white">Health Checklist</button>
-                        </li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><button onclick="showPage('process')" class="hover:text-white transition">Sales
+                                Process</button></li>
+                        <li><button onclick="showPage('stories')" class="hover:text-white transition">Success
+                                Stories</button></li>
+                        <li><button onclick="showPage('disclaimer')"
+                                class="hover:text-white transition">Disclaimer</button></li>
                     </ul>
                 </div>
                 <div>
