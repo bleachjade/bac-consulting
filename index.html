@@ -105,7 +105,7 @@
         }
 
         .prose h3 {
-            font-size: 1.5rem;
+            font-sise: 1.5rem;
             font-weight: 700;
             margin-top: 2em;
             margin-bottom: 0.75em;
@@ -116,6 +116,34 @@
             list-style-type: disc;
             padding-left: 1.5em;
             margin-bottom: 1.5em;
+        }
+
+        /* Carousel Styles */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            /* Mobile default */
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .carousel-slide {
+                flex: 0 0 50%;
+                /* Tablet: 2 slides */
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .carousel-slide {
+                flex: 0 0 33.333%;
+                /* Desktop: 3 slides */
+                width: 33.333%;
+            }
         }
     </style>
 </head>
@@ -162,9 +190,6 @@
                         <button onclick="showPage('services')"
                             class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="services">Services</button>
-                        <button onclick="showPage('stories')"
-                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
-                            data-target="stories">Client Success Stories</button>
                         <button onclick="showPage('process')"
                             class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="process">Process</button>
@@ -195,9 +220,6 @@
                     Us</button>
                 <button onclick="showPage('services'); toggleMobileMenu()"
                     class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Services</button>
-                <button onclick="showPage('stories'); toggleMobileMenu()"
-                    class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Client
-                    Success Stories</button>
                 <button onclick="showPage('process'); toggleMobileMenu()"
                     class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Process</button>
                 <button onclick="showPage('blog'); toggleMobileMenu()"
@@ -214,7 +236,7 @@
     <!-- ========================================== -->
     <main id="home" class="page-section active flex-grow">
         <!-- Modern Hero Section -->
-        <section class="relative bg-white overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-24">
+        <section class="relative bg-white overflow-hidden pt-16 pb-8 lg:pt-24 lg:pb-24">
             <div class="absolute right-0 top-0 w-1/2 h-full z-10 bg-white/80 block">
             </div>
             <div class="absolute inset-y-0 right-0 w-1/2 bg-gray-50 z-0 hidden lg:block">
@@ -229,28 +251,27 @@
                     <div class="lg:col-span-6 text-left">
                         <div
                             class="inline-block px-3 py-1 bg-blue-50 text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-                            Health Care Business Consulting
+                            Health care business consulting
                         </div>
                         <h1 class="text-4xl lg:text-5xl font-extrabold text-bac-text tracking-tight mb-6 leading-tight">
                             Unlock the <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-bac-title to-bac-teal">True
-                                Value</span> of Your Health Practice
+                                value</span> of your health practice
                         </h1>
                         <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
-                            At BAC Business Consulting, we help allied health practice owners realise their full
-                            potential, whether you’re looking to start up, grow, streamline operations, or prepare for
-                            a profitable sale. With decades of experience in allied health, medical and business
-                            management, we understand the unique challenges and opportunities in this industry.
+                            Are you an allied health practice owner looking to realise the full potential of
+                            your business? Do you want help from someone who understands the unique
+                            challenges and opportunities in this industry?
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-8">
                             <button onclick="showPage('contact')"
                                 class="px-8 py-4 bg-bac-title text-white rounded-lg hover:bg-bac-dark transition text-center font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                Book a Consultation Today
+                                Book a consultation today
                             </button>
                         </div>
                     </div>
 
-                    <!-- Abstract Graphic Side (Restored) -->
+                    <!-- Abstract Graphic Side -->
                     <div class="lg:col-span-6 mt-12 lg:mt-0 relative">
                         <div
                             class="relative rounded-2xl bg-white shadow-2xl p-8 border border-gray-100 transform rotate-1 hover:rotate-0 transition duration-500">
@@ -261,7 +282,7 @@
                                 class="absolute bottom-0 left-0 -mb-4 -ml-4 w-32 h-32 bg-bac-teal rounded-full opacity-30 blur-xl">
                             </div>
 
-                            <h3 class="text-xl font-bold text-bac-text mb-6">The Practice Lifecycle</h3>
+                            <h3 class="text-xl font-bold text-bac-text mb-6">The practice lifecycle</h3>
                             <div class="space-y-6">
                                 <div class="flex items-start">
                                     <div
@@ -283,22 +304,23 @@
                                             success.</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center mb-6">
                                     <div
                                         class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
                                         3</div>
                                     <div class="ml-4">
-                                        <h4 class="text-lg font-bold text-gray-900">Protect and Future Proof YOUR legacy
+                                        <h4 class="text-lg font-bold text-gray-900 leading-tight">Protect and future
+                                            proof YOUR legacy
                                         </h4>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
                                     <div
                                         class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
-                                        3</div>
+                                        4</div>
                                     <div class="ml-4">
                                         <h4 class="text-lg font-bold text-gray-900">Exit</h4>
-                                        <p class="text-gray-500 text-sm">Maximize EBITDA multiples and sell with
+                                        <p class="text-gray-500 text-sm">Maximise EBITDA multiples and sell with
                                             confidence.</p>
                                     </div>
                                 </div>
@@ -310,36 +332,62 @@
         </section>
 
         <!-- Stats Bar -->
-        <div class="bg-bac-text text-white py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-700">
-                    <div>
-                        <div class="text-4xl font-bold text-bac-light mb-1">30+</div>
-                        <div class="text-xs uppercase tracking-wider opacity-70">Years Experience</div>
+        <div class="bg-bac-text text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 relative">
+                <div class="absolute top-4 right-0 hidden md:block opacity-5 pointer-events-none">
+                    <img src="logo.png" alt="BAC logo background" class="h-32 w-auto"
+                        onerror="this.src='https://placehold.co/120x120/008ecf/ffffff?text=BAC'">
+                </div>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between mb-8 border-b border-gray-700 pb-8 relative z-10">
+                    <div class="flex items-center space-x-5 mb-6 md:mb-0">
+                        <div
+                            class="w-20 md:w-14 h-14 bg-white rounded-xl flex items-center justify-center p-2 shadow-lg">
+                            <img src="logo.png" alt="BAC logo" class="w-full h-auto"
+                                onerror="this.src='https://placehold.co/56x56/008ecf/ffffff?text=BAC'">
+                        </div>
+                        <div>
+                            <p class="text-bac-light text-xs font-bold uppercase tracking-widest mb-1">The BAC track
+                                record</p>
+                            <h2 class="text-xl md:text-2xl font-bold leading-tight">Proven results delivered by Ben
+                                Corso and the team</h2>
+                        </div>
                     </div>
-                    <div>
-                        <div class="text-4xl font-bold text-bac-light mb-1">$40M+</div>
-                        <div class="text-xs uppercase tracking-wider opacity-70">Revenue Managed</div>
+                    <div class="text-center md:text-right">
+                        <p class="text-sm text-gray-400 max-w-xs leading-relaxed italic">Helping allied health owners
+                            achieve exceptional growth and strategic exits across Australia.</p>
                     </div>
-                    <div>
-                        <div class="text-4xl font-bold text-bac-light mb-1">100%</div>
-                        <div class="text-xs uppercase tracking-wider opacity-70">Allied Health Focus</div>
+                </div>
+
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-gray-700 relative z-10">
+                    <div class="px-2">
+                        <div class="text-4xl md:text-5xl font-bold text-bac-light mb-1">30+</div>
+                        <div class="text-xs uppercase tracking-wider opacity-70 font-semibold">Years experience</div>
                     </div>
-                    <div>
-                        <div class="text-4xl font-bold text-bac-light mb-1">Exit</div>
-                        <div class="text-xs uppercase tracking-wider opacity-70">Strategy Experts</div>
+                    <div class="px-2 md:border-l-0 border-gray-700">
+                        <div class="text-4xl md:text-5xl font-bold text-bac-light mb-1">$40M+</div>
+                        <div class="text-xs uppercase tracking-wider opacity-70 font-semibold">Revenue managed</div>
+                    </div>
+                    <div class="px-2 md:border-l-0 border-gray-700">
+                        <div class="text-4xl md:text-5xl font-bold text-bac-light mb-1">100%</div>
+                        <div class="text-xs uppercase tracking-wider opacity-70 font-semibold">Allied health focus</div>
+                    </div>
+                    <div class="px-2 md:border-l-0 border-gray-700">
+                        <div class="text-4xl md:text-5xl font-bold text-bac-light mb-1">Exit</div>
+                        <div class="text-xs uppercase tracking-wider opacity-70 font-semibold">Strategy experts</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Video Intro Section (Side-by-Side Redesign) -->
-        <section class="py-20 bg-white border-b border-gray-100">
+        <!-- Video Intro Section -->
+        <section class="py-8 md:py-20 bg-white border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <!-- Left: Video Player -->
                     <div
-                        class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 group h-[350px] mt-6 flex items-center justify-center border-4 border-white transform transition duration-500 hover:shadow-3xl">
+                        class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 group h-[250px] md:h-[350px] mt-6 flex items-center justify-center border-4 border-white transform transition duration-500 hover:shadow-3xl">
                         <video src="Optimise with BAC Business Consulting.mp4" class="w-full h-full object-cover"
                             controls autoPlay muted loop playsInline
                             poster="https://placehold.co/1200x675/193546/ffffff?text=Video+Loading...">
@@ -354,14 +402,15 @@
                                 <i class="fas fa-quote-left text-xl"></i>
                             </div>
                             <div>
-                                <h2 class="text-2xl font-bold text-bac-text">A Message from Ben Corso</h2>
-                                <p class="text-sm text-bac-teal font-medium uppercase tracking-wide">Founder & Principal
-                                    Consultant</p>
+                                <h2 class="text-2xl font-bold text-bac-text">A message from Ben Corso</h2>
+                                <p class="text-sm text-bac-teal font-medium uppercase tracking-wide">Founder & principal
+                                    consultant</p>
                             </div>
                         </div>
 
                         <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-inner relative">
-                            <p class="text-lg text-gray-700 italic mb-6 leading-relaxed font-serif relative z-10">
+                            <p
+                                class="text-md md:text-lg text-gray-700 italic mb-6 leading-relaxed font-serif relative z-10">
                                 "Hi, I’m Ben Corso. With over 30 years in physiotherapy and Allied Health, I’ve been in
                                 your shoes. I know the industry inside out, and I’m here to give you proven strategies
                                 to grow, scale, and sell for the highest price."
@@ -370,22 +419,28 @@
                             <div class="space-y-3">
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Built clinics & brand from
+                                    <span class="text-gray-700 font-medium text-sm">Build clinic and brand from
                                         scratch</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Transitioned clinician to
-                                        owner</span>
+                                    <span class="text-gray-700 font-medium text-sm">Transition from clinician to
+                                        business owner</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Scaled to multi-site success</span>
+                                    <span class="text-gray-700 font-medium text-sm">Scale to multi-site success and
+                                        multi-disciplinary</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Sold to major Allied Health
-                                        Group</span>
+                                    <span class="text-gray-700 font-medium text-sm">Protect and future proof your
+                                        legacy</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
+                                    <span class="text-gray-700 font-medium text-sm">Maximise value and prepare to
+                                        sell</span>
                                 </div>
                             </div>
                         </div>
@@ -393,7 +448,7 @@
                         <div class="mt-8">
                             <button onclick="showPage('about')"
                                 class="text-bac-title font-bold hover:text-bac-dark flex items-center transition">
-                                Read Full Story <i class="fas fa-arrow-right ml-2"></i>
+                                Read full story <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
@@ -402,56 +457,60 @@
         </section>
 
         <!-- Problem/Solution Section -->
-        <section class="py-24 bg-white relative overflow-hidden">
+        <section class="py-8 md:py-24 bg-white relative overflow-hidden">
             <!-- Modern SVG Background Line -->
-            <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute inset-0 z-0 pointer-events-none hidden md:block">
                 <svg width="100%" height="100%" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="none">
-                    <!-- Thick Brand Colored Wave -->
                     <path d="M-100 350 C 200 150, 600 550, 1000 350 S 1600 150, 2000 450" stroke="#4cb4e7"
                         stroke-width="40" stroke-opacity="0.1" stroke-linecap="round" />
-
-                    <!-- Thin Accent Line -->
                     <path d="M-100 300 C 200 100, 600 500, 1000 300 S 1600 100, 2000 400" stroke="#008ecf"
                         stroke-width="3" stroke-opacity="0.2" stroke-dasharray="12 12" />
-
                 </svg>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-20">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-bac-text mb-6">Stop Creating a job.<br>Start Building
-                        an Asset.</h2>
+                <div class="text-center mb-8 md:mb-20">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-bac-text mb-6">Develop your allied health practice as
+                        a business asset. <br />Not to give yourself a job.</h2>
                     <p class="text-xl text-gray-600 max-w-2xl mx-auto">Most practice owners struggle to balance clinical
                         work with business strategy. The result? A business that relies entirely on them.</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-10">
+                <div class="grid md:grid-cols-3 gap-4 md:gap-10">
                     <!-- Card 1 -->
-                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                        <i class="fas fa-user-md text-4xl text-bac-teal mb-6"></i>
-                        <h3 class="text-xl font-bold text-bac-text mb-4">Clinician Trap</h3>
-                        <p class="text-gray-600 mb-6">Stuck treating patients 40 hours a week with no time to work
-                            <em>on</em> the business.
-                        </p>
+                    <div
+                        class="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex flex-col shadow-sm hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-6">
+                            <i class="fas fa-user-md text-2xl text-bac-teal"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-bac-text mb-4">Operational dependency</h3>
+                        <p class="text-gray-600 mb-8 flex-grow">Owners often find themselves stuck treating patients 40
+                            hours a week with no capacity to work <em>on</em> the business.</p>
                         <hr class="border-gray-200 mb-6">
                         <p class="font-bold text-bac-title text-sm">We help you transition to ownership.</p>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                        <i class="fas fa-chart-pie text-4xl text-bac-teal mb-6"></i>
-                        <h3 class="text-xl font-bold text-bac-text mb-4">Unclear Value</h3>
-                        <p class="text-gray-600 mb-6">Not knowing what your practice is worth or how to increase its
-                            EBITDA multiple.</p>
+                    <div
+                        class="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex flex-col shadow-sm hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-6">
+                            <i class="fas fa-chart-pie text-2xl text-bac-teal"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-bac-text mb-4">Valuation uncertainty</h3>
+                        <p class="text-gray-600 mb-8 flex-grow">Misunderstanding what actually drives a clinic's worth
+                            or how to increase its specific EBITDA multiple.</p>
                         <hr class="border-gray-200 mb-6">
                         <p class="font-bold text-bac-title text-sm">We provide clear valuation metrics.</p>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
-                        <i class="fas fa-door-open text-4xl text-bac-teal mb-6"></i>
-                        <h3 class="text-xl font-bold text-bac-text mb-4">No Exit Plan</h3>
-                        <p class="text-gray-600 mb-6">Missing out on hundreds of thousands at sale due to poor
-                            preparation and compliance.</p>
+                    <div
+                        class="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex flex-col shadow-sm hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-6">
+                            <i class="fas fa-door-open text-2xl text-bac-teal"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-bac-text mb-4">No exit plan</h3>
+                        <p class="text-gray-600 mb-8 flex-grow">Missing out on significant sale premiums due to poor
+                            preparation, weak compliance, or owner reliance.</p>
                         <hr class="border-gray-200 mb-6">
                         <p class="font-bold text-bac-title text-sm">We structure your strategic exit.</p>
                     </div>
@@ -459,12 +518,17 @@
             </div>
         </section>
 
-        <!-- Latest Insights Preview (New) -->
-        <section class="py-24 bg-gray-50">
+        <!-- Testimonials (Carousel Wrapper) -->
+        <section id="home-testimonial-section" class="py-12 md:py-24 bg-gray-50 overflow-hidden">
+            <!-- Content will be injected via renderTestimonials() -->
+        </section>
+
+        <!-- Latest Insights Preview -->
+        <section class="py-12 md:py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-end mb-12">
                     <div>
-                        <h2 class="text-3xl font-bold text-bac-text">Latest Insights</h2>
+                        <h2 class="text-3xl font-bold text-bac-text">Latest insights</h2>
                         <p class="text-gray-600 mt-2">Expert advice on running and selling your practice.</p>
                     </div>
                     <button onclick="showPage('blog')"
@@ -473,55 +537,61 @@
                     </button>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Blog Card 1 (New) -->
+                <div class="grid md:grid-cols-3 gap-4 md:gap-8">
+                    <!-- Blog Card 1 -->
                     <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer"
+                        class="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition cursor-pointer"
                         onclick="openBlog(5)">
                         <div class="h-48 bg-bac-tealdark flex items-center justify-center">
                             <i class="fas fa-clock text-5xl text-white opacity-20"></i>
                         </div>
                         <div class="p-6">
-                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-2">Growth Strategy
+                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-2">Growth strategy
                             </div>
-                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2">How to Scale Your Time as a
-                                Clinician</h3>
-                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">Create value without you in the business.
+                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2 min-h-[56px]">How to scale your
+                                time as a
+                                clinician</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 min-h-[60px]">Create value without you in
+                                the business.
                                 Transition from "on the tools" to CEO.</p>
-                            <span class="text-bac-title font-semibold text-sm hover:underline">Read Article</span>
+                            <span class="text-bac-title font-semibold text-sm hover:underline">Read article</span>
                         </div>
                     </article>
 
                     <!-- Blog Card 2 -->
                     <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer"
+                        class="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition cursor-pointer"
                         onclick="openBlog(1)">
                         <div class="h-48 bg-bac-text flex items-center justify-center">
                             <i class="fas fa-file-invoice-dollar text-5xl text-white opacity-20"></i>
                         </div>
                         <div class="p-6">
                             <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-2">Finance</div>
-                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2">What is a Normalized P&L?</h3>
-                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">Understanding "add-backs" and how to
-                                present a "clean" P&L is critical for maximizing your sale price.</p>
-                            <span class="text-bac-title font-semibold text-sm hover:underline">Read Article</span>
+                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2 min-h-[56px]">What is a
+                                normalised P&L?</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 min-h-[60px]">Understanding "add-backs"
+                                and how to
+                                present a "clean" P&L is critical for maximising your sale price.</p>
+                            <span class="text-bac-title font-semibold text-sm hover:underline">Read article</span>
                         </div>
                     </article>
 
                     <!-- Blog Card 3 -->
                     <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer"
+                        class="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition cursor-pointer"
                         onclick="openBlog(3)">
                         <div class="h-48 bg-bac-light flex items-center justify-center">
                             <i class="fas fa-chart-line text-5xl text-white opacity-20"></i>
                         </div>
                         <div class="p-6">
                             <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-2">Valuation</div>
-                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2">EBITDA: What It Is and Why It
-                                Matters</h3>
-                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">The number one metric buyers look at.
+                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2 min-h-[56px]">EBITDA: what it
+                                is and why it
+                                matters</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 min-h-[60px]">The number one metric buyers
+                                look at.
                                 Learn how to calculate and improve your EBITDA.</p>
-                            <span class="text-bac-title font-semibold text-sm hover:underline">Read Article</span>
+                            <span class="text-bac-title font-semibold text-sm hover:underline">Read article</span>
                         </div>
                     </article>
                 </div>
@@ -535,143 +605,13 @@
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-center text-bac-text mb-16">Client Success Stories</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
-                    <!-- Peter Tziavrangos -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben is an experienced and
-                                respected Physiotherapist and business owner. He's seen and done it all... Having known
-                                Ben all of my career and using him as a sounding board many times, I can highly
-                                recommend his services."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Peter Tziavrangos
-                            </div>
-                            <div class="text-xs text-gray-500 space-y-1.5">
-                                <p class="font-medium text-gray-600">Managing Director, Move for Better Health</p>
-                                <p>Non-Exec Director & VP, Australian Physiotherapy Assoc.</p>
-                                <p>Non-Exec Director, Australian Physiotherapy Council</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Antony Hirst -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"His knowledge of the corporate
-                                sector is immense. I have absolutely no hesitation in recommending anyone to use his
-                                services... you will get a handsome return for your investment."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Antony Hirst
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Chair National Business Group, APA</div>
-                        </div>
-                    </div>
-
-                    <!-- Bill McTigue -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"I have worked with Ben Corso...
-                                for over 15 years. I have watched him grow a private allied health practice... and then
-                                sell to an aggregator. I have also been the beneficiary of his advice in my own
-                                practice."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Bill McTigue
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Director, Mentone Physio</div>
-                        </div>
-                    </div>
-
-                    <!-- Annette Tonkin -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben's honesty and strategic
-                                clarity will give you the confidence to move forward with purpose. Whether you're
-                                considering a sale, navigating growth stages, or planning your exit strategy."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Annette Tonkin
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Thinking Physio</div>
-                        </div>
-                    </div>
-
-                    <!-- Phil Calvert -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"Critically Ben is able to
-                                distil what is really important and provide outcome focussed strategies that work... Our
-                                team would highly recommend Ben."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Assoc. Prof. Phil Calvert
-                            </div>
-                            <div class="text-xs text-gray-500 space-y-1.5">
-                                <p class="font-medium text-gray-600">Chair, Australasian College of Sport & Exercise
-                                    Physicians</p>
-                                <p>Past President, Australian Physiotherapy Assoc.</p>
-                                <p>Director, Children’s Physio SA</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- David Giles -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"His strategic insight has
-                                played a meaningful role in shaping our growth... from assessing the benefits of
-                                purchasing a commercial property to navigating the complexities of a purpose-built
-                                clinic."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                David Giles
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Director, The Injury Hub</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- See Full Stories Button -->
-                <div class="mt-16 text-center">
-                    <button onclick="showPage('stories')"
-                        class="px-8 py-3 bg-white text-bac-title border-2 border-bac-title rounded-full font-bold hover:bg-blue-50 transition transform hover:-translate-y-0.5 shadow-sm">
-                        See Full Stories
-                    </button>
-                </div>
-            </div>
-        </section>
-
         <!-- CTA Footer Strip -->
         <section class="bg-bac-teal py-16">
             <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold text-white mb-6">Ready to realize the full value of your practice?</h2>
+                <h2 class="text-3xl font-bold text-white mb-6">Ready to realise the full value of your practice?</h2>
                 <button onclick="showPage('contact')"
                     class="px-10 py-4 bg-white text-bac-teal rounded-full font-bold shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1">
-                    Book Your Free Consultation
+                    Book your free consultation
                 </button>
             </div>
         </section>
@@ -694,107 +634,55 @@
         <!-- Blog Grid -->
         <section class="py-20 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Article 5 (NEW) -->
+                <div class="grid md:grid-cols-3 gap-4 md:gap-8">
+                    <!-- Blog Card 1 -->
                     <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer flex flex-col h-full"
+                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer"
                         onclick="openBlog(5)">
-                        <div
-                            class="h-56 bg-gradient-to-br from-bac-text to-bac-title flex items-center justify-center text-white">
-                            <i class="fas fa-clock text-6xl opacity-30"></i>
+                        <div class="h-48 bg-bac-tealdark flex items-center justify-center">
+                            <i class="fas fa-clock text-5xl text-white opacity-20"></i>
                         </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-3">Growth Strategy
+                        <div class="p-6">
+                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-2">Growth strategy
                             </div>
-                            <h2 class="text-2xl font-bold text-bac-text mb-3 hover:text-bac-title transition">How to
-                                Scale Your Time</h2>
-                            <p class="text-gray-600 mb-6 flex-grow">How to transition from clinician to business owner
-                                and create value without you in the business.</p>
-                            <div class="flex items-center text-bac-title font-bold text-sm mt-auto">
-                                Read Article <i class="fas fa-arrow-right ml-2"></i>
-                            </div>
+                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2">How to scale your time as a
+                                clinician</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">Create value without you in the business.
+                                Transition from "on the tools" to CEO.</p>
+                            <span class="text-bac-title font-semibold text-sm hover:underline">Read article</span>
                         </div>
                     </article>
 
-                    <!-- Article 1 -->
+                    <!-- Blog Card 2 -->
                     <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer flex flex-col h-full"
+                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer"
                         onclick="openBlog(1)">
-                        <div
-                            class="h-56 bg-gradient-to-br from-bac-text to-bac-title flex items-center justify-center text-white">
-                            <i class="fas fa-file-invoice-dollar text-6xl opacity-30"></i>
+                        <div class="h-48 bg-bac-text flex items-center justify-center">
+                            <i class="fas fa-file-invoice-dollar text-5xl text-white opacity-20"></i>
                         </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-3">Financial Health
-                            </div>
-                            <h2 class="text-2xl font-bold text-bac-text mb-3 hover:text-bac-title transition">What is a
-                                Normalized P&L?</h2>
-                            <p class="text-gray-600 mb-6 flex-grow">Why "clean" numbers are essential for selling your
-                                practice and understanding add-backs.</p>
-                            <div class="flex items-center text-bac-title font-bold text-sm mt-auto">
-                                Read Article <i class="fas fa-arrow-right ml-2"></i>
-                            </div>
+                        <div class="p-6">
+                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-2">Finance</div>
+                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2">What is a normalised P&L?</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">Understanding "add-backs" and how to
+                                present a "clean" P&L is critical for maximising your sale price.</p>
+                            <span class="text-bac-title font-semibold text-sm hover:underline">Read article</span>
                         </div>
                     </article>
 
-                    <!-- Article 2 -->
+                    <!-- Blog Card 3 -->
                     <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer flex flex-col h-full"
-                        onclick="openBlog(2)">
-                        <div
-                            class="h-56 bg-gradient-to-br from-bac-dark to-bac-teal flex items-center justify-center text-white">
-                            <i class="fas fa-hand-holding-usd text-6xl opacity-30"></i>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-3">Strategy</div>
-                            <h2 class="text-2xl font-bold text-bac-text mb-3 hover:text-bac-title transition">Paying
-                                Yourself Correctly</h2>
-                            <p class="text-gray-600 mb-6 flex-grow">The impact of owner wages on EBITDA and how to
-                                structure your compensation.</p>
-                            <div class="flex items-center text-bac-title font-bold text-sm mt-auto">
-                                Read Article <i class="fas fa-arrow-right ml-2"></i>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Article 3 -->
-                    <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer flex flex-col h-full"
+                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition cursor-pointer"
                         onclick="openBlog(3)">
-                        <div
-                            class="h-56 bg-gradient-to-br from-bac-light to-blue-300 flex items-center justify-center text-white">
-                            <i class="fas fa-chart-line text-6xl opacity-30"></i>
+                        <div class="h-48 bg-bac-light flex items-center justify-center">
+                            <i class="fas fa-chart-line text-5xl text-white opacity-20"></i>
                         </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-3">Valuation</div>
-                            <h2 class="text-2xl font-bold text-bac-text mb-3 hover:text-bac-title transition">
-                                Understanding EBITDA</h2>
-                            <p class="text-gray-600 mb-6 flex-grow">What it is, why it matters, and how it directly
-                                correlates to your sale price.</p>
-                            <div class="flex items-center text-bac-title font-bold text-sm mt-auto">
-                                Read Article <i class="fas fa-arrow-right ml-2"></i>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Article 4 -->
-                    <article
-                        class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer flex flex-col h-full"
-                        onclick="openBlog(4)">
-                        <div
-                            class="h-56 bg-gradient-to-br from-bac-tealdark to-gray-800 flex items-center justify-center text-white">
-                            <i class="fas fa-search-dollar text-6xl opacity-30"></i>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-3">Exit Strategy
-                            </div>
-                            <h2 class="text-2xl font-bold text-bac-text mb-3 hover:text-bac-title transition">Top 10
-                                Things Buyers Want</h2>
-                            <p class="text-gray-600 mb-6 flex-grow">From steady growth to secure leases—what makes a
-                                practice attractive to aggregators.</p>
-                            <div class="flex items-center text-bac-title font-bold text-sm mt-auto">
-                                Read Article <i class="fas fa-arrow-right ml-2"></i>
-                            </div>
+                        <div class="p-6">
+                            <div class="text-xs font-bold text-bac-teal uppercase tracking-wide mb-2">Valuation</div>
+                            <h3 class="text-xl font-bold text-bac-text mb-2 line-clamp-2">EBITDA: what it is and why it
+                                matters</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">The number one metric buyers look at.
+                                Learn how to calculate and improve your EBITDA.</p>
+                            <span class="text-bac-title font-semibold text-sm hover:underline">Read article</span>
                         </div>
                     </article>
                 </div>
@@ -836,156 +724,11 @@
                             practice.</p>
                         <button onclick="showPage('contact')"
                             class="px-6 py-2 bg-bac-title text-white rounded-lg font-bold hover:bg-bac-dark">Contact
-                            Us</button>
+                            us</button>
                     </div>
                 </article>
             </div>
         </div>
-    </main>
-
-
-    <!-- ========================================== -->
-    <!-- PAGE: SUCCESS STORIES (NEW) -->
-    <!-- ========================================== -->
-    <main id="stories" class="page-section flex-grow">
-        <!-- Header -->
-        <section class="bg-bac-text py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl font-bold text-white mb-4">Client Success Stories</h1>
-                <p class="text-xl text-bac-light max-w-2xl mx-auto">Hear from the allied health practice owners we've
-                    helped transition, grow, and sell.</p>
-            </div>
-        </section>
-
-        <!-- Stories Grid -->
-        <section class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
-                    <!-- Peter Tziavrangos -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben is an experienced and
-                                respected Physiotherapist and business owner. He's seen and done it all... Having known
-                                Ben all of my career and using him as a sounding board many times, I can highly
-                                recommend his services."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Peter Tziavrangos
-                            </div>
-                            <div class="text-xs text-gray-500 space-y-1.5">
-                                <p class="font-medium text-gray-600">Managing Director, Move for Better Health</p>
-                                <p>Non-Exec Director & VP, Australian Physiotherapy Assoc.</p>
-                                <p>Non-Exec Director, Australian Physiotherapy Council</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Antony Hirst -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"His knowledge of the corporate
-                                sector is immense. I have absolutely no hesitation in recommending anyone to use his
-                                services... you will get a handsome return for your investment."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Antony Hirst
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Chair National Business Group, APA</div>
-                        </div>
-                    </div>
-
-                    <!-- Bill McTigue -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"I have worked with Ben Corso...
-                                for over 15 years. I have watched him grow a private allied health practice... and then
-                                sell to an aggregator. I have also been the beneficiary of his advice in my own
-                                practice."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Bill McTigue
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Director, Mentone Physio</div>
-                        </div>
-                    </div>
-
-                    <!-- Annette Tonkin -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"Ben's honesty and strategic
-                                clarity will give you the confidence to move forward with purpose. Whether you're
-                                considering a sale, navigating growth stages, or planning your exit strategy."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Annette Tonkin
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Thinking Physio</div>
-                        </div>
-                    </div>
-
-                    <!-- Phil Calvert -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"Critically Ben is able to
-                                distil what is really important and provide outcome focussed strategies that work... Our
-                                team would highly recommend Ben."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                Assoc. Prof. Phil Calvert
-                            </div>
-                            <div class="text-xs text-gray-500 space-y-1.5">
-                                <p class="font-medium text-gray-600">Chair, Australasian College of Sport & Exercise
-                                    Physicians</p>
-                                <p>Past President, Australian Physiotherapy Assoc.</p>
-                                <p>Director, Children’s Physio SA</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- David Giles -->
-                    <div
-                        class="bg-gray-50 p-8 rounded-2xl relative flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-                        <i class="fas fa-quote-left text-3xl text-bac-light opacity-30 absolute top-6 left-6"></i>
-                        <div class="relative z-10 pl-6 mb-6 flex-grow">
-                            <p class="italic text-gray-700 text-sm leading-relaxed">"His strategic insight has
-                                played a meaningful role in shaping our growth... from assessing the benefits of
-                                purchasing a commercial property to navigating the complexities of a purpose-built
-                                clinic."</p>
-                        </div>
-                        <div class="pl-6 border-l-2 border-bac-teal mt-auto pt-1">
-                            <div class="font-bold text-bac-text text-sm mb-1">
-                                David Giles
-                            </div>
-                            <div class="text-xs text-gray-500 font-medium">Director, The Injury Hub</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-16 text-center">
-                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Ready to be our next success story? We work with
-                        practice owners across Australia to achieve exceptional results.</p>
-                    <button onclick="showPage('contact')"
-                        class="px-10 py-4 bg-bac-title text-white rounded-full font-bold shadow-lg hover:bg-bac-dark transition transform hover:-translate-y-1">
-                        Book Your Consultation
-                    </button>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- ========================================== -->
@@ -996,9 +739,9 @@
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
-                    <h1 class="text-4xl font-bold text-bac-title mb-6">About BAC Business Consulting</h1>
+                    <h1 class="text-4xl font-bold text-bac-title mb-6">About BAC business consulting</h1>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">"I help allied health practice
-                        owners realize their full potential, whether you’re looking to start up, grow, streamline
+                        owners realise their full potential, whether you’re looking to start up, grow, streamline
                         operations, or prepare for a profitable sale."</p>
                 </div>
 
@@ -1006,32 +749,28 @@
                     <div class="lg:w-1/3 w-full">
                         <div
                             class="bg-gradient-to-b from-gray-50 to-gray-100 rounded-2xl p-8 text-center shadow-lg border-t-4 border-bac-title sticky top-32">
-                            <!-- Placeholder for Ben's Photo -->
                             <div
                                 class="w-48 h-48 mx-auto bg-gray-200 rounded-full mb-6 flex items-center justify-center text-gray-400 overflow-hidden border-4 border-white shadow-md">
-                                <img src="donbrice-8348.jpg" alt="Ben's profile image"
+                                <img src="donbrice-8348.jpg" alt="Ben Corso"
                                     class="w-full h-full object-cover object-top" />
                             </div>
                             <h2 class="text-2xl font-bold mb-2 text-bac-text">Ben Corso</h2>
-                            <p class="text-bac-title font-bold mb-1">Founder & Business Consultant</p>
+                            <p class="text-bac-title font-bold mb-1">Founder & business consultant</p>
                             <p class="text-xs text-gray-500 uppercase tracking-wide mb-6">B App Sc (Physio), M.Physio
                                 (Manipulative)</p>
 
                             <!-- Contact Icons -->
                             <div class="flex justify-center space-x-5 border-t border-gray-200 pt-6">
                                 <a href="#"
-                                    class="text-gray-400 hover:text-bac-title transition transform hover:scale-110"
-                                    title="LinkedIn">
+                                    class="text-gray-400 hover:text-bac-title transition transform hover:scale-110">
                                     <i class="fab fa-linkedin text-2xl"></i>
                                 </a>
                                 <a href="mailto:ben@bacbusinessconsulting.com.au"
-                                    class="text-gray-400 hover:text-bac-title transition transform hover:scale-110"
-                                    title="Email">
+                                    class="text-gray-400 hover:text-bac-title transition transform hover:scale-110">
                                     <i class="fas fa-envelope text-2xl"></i>
                                 </a>
                                 <a href="tel:0411774335"
-                                    class="text-gray-400 hover:text-bac-title transition transform hover:scale-110"
-                                    title="Call">
+                                    class="text-gray-400 hover:text-bac-title transition transform hover:scale-110">
                                     <i class="fas fa-phone text-2xl"></i>
                                 </a>
                             </div>
@@ -1039,44 +778,56 @@
                     </div>
                     <div class="lg:w-2/3">
                         <h3 class="text-2xl font-bold mb-6 text-bac-text flex items-center">
-                            <i class="fas fa-history text-bac-light mr-3"></i> My Story
+                            <i class="fas fa-history text-bac-light mr-3"></i> Our story
                         </h3>
-                        <div class="prose max-w-none text-gray-600 space-y-6 text-lg">
+                        <div class="max-w-none text-gray-600 space-y-6 text-lg">
                             <p>Founded by Ben Corso, BAC Business Consulting brings over 30 years of experience in
-                                allied health practice ownership. My journey started in 1996 as a physiotherapist, but
-                                like many of you, I had to learn business the hard way.</p>
-                            <p>Starting with no business plan and doing the books at night, I eventually grew "The
-                                Physio Clinic" from a single room to a multi-site, multi-disciplinary operation
-                                generating <strong class="text-bac-text">> $4.5M in revenue</strong>.</p>
-                            <p>In 2021, I successfully sold the business to Australia’s largest integrated Allied Health
-                                Group and transitioned into a Regional and then General Manager role with this company
-                                overseeing 30+ clinics and > $40M in revenue. Now, I use
-                                that experience to help you achieve the same success.</p>
+                                allied health practice ownership. Our journey started in 1996 within the field of
+                                physiotherapy; like many of you, we had to learn the business side of health the hard
+                                way.</p>
+                            <p>Starting with no formal business plan and managing the books after hours, our team
+                                eventually grew "The Physio Clinic" from a single room to a multi-site,
+                                multi-disciplinary operation generating over $4.5M in revenue.</p>
+                            <p>In 2021, we successfully navigated the sale of the business to Australia’s largest
+                                integrated Allied Health Group. This transition led to Regional and General Management
+                                roles overseeing 30+ clinics and $40M+ in revenue. Today, we leverage that collective
+                                experience to help you achieve the same success.</p>
 
-                            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-bac-title mt-8">
-                                <h4 class="font-bold text-bac-text mb-4">Key Achievements</h4>
-                                <ul class="grid sm:grid-cols-2 gap-3">
-                                    <li class="flex items-center"><i class="fas fa-check text-bac-teal mr-2"></i>Built
-                                        clinics from scratch</li>
-                                    <li class="flex items-center"><i
-                                            class="fas fa-check text-bac-teal mr-2"></i>Clinician to Owner transition
-                                    </li>
-                                    <li class="flex items-center"><i class="fas fa-check text-bac-teal mr-2"></i>Scaled
-                                        to multi-site success</li>
-                                    <li class="flex items-center"><i class="fas fa-check text-bac-teal mr-2"></i>Sold to
-                                        listed company</li>
-                                </ul>
-                            </div>
+                            <div class="flex items-stretch gap-4 mt-8">
+                                <div class="flex flex-col gap-4 w-1/2">
+                                    <img src="the-physio-clinic-prospect-front-e1604278217879-768x512.png"
+                                        alt="Clinic exterior"
+                                        class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-[200px] w-full">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <img src="Reception.jpg" alt="Reception"
+                                            class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-32 w-full">
+                                        <img src="20220728_082636.jpg" alt="Clinic interior"
+                                            class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-32 w-full">
+                                    </div>
+                                </div>
 
-                            <!-- New Visual Journey Grid -->
-                            <div class="grid grid-cols-3 gap-4 mt-4">
-                                <img src="the-physio-clinic-prospect-front-e1604278217879-768x512.png"
-                                    alt="Clinic Exterior"
-                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-40 w-full">
-                                <img src="Reception.jpg" alt="Reception image"
-                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-40 w-full">
-                                <img src="20220728_082636.jpg" alt="Clinic Interior"
-                                    class="rounded-lg shadow-sm hover:shadow-md transition duration-300 object-cover h-40 w-full">
+                                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-bac-title w-1/2">
+                                    <h4 class="font-bold text-bac-text mb-4">Key achievements</h4>
+                                    <ul class="grid grid-cols-1 gap-3">
+                                        <li class="flex items-baseline"><i
+                                                class="fas fa-check text-bac-teal mr-2"></i>Build
+                                            clinic and brand from scratch</li>
+                                        <li class="flex items-baseline"><i
+                                                class="fas fa-check text-bac-teal mr-2"></i>Transition from clinician to
+                                            business owner
+                                        </li>
+                                        <li class="flex items-baseline"><i
+                                                class="fas fa-check text-bac-teal mr-2"></i>Scale
+                                            to multi-site success and multi-disciplinary</li>
+                                        <li class="flex items-baseline"><i
+                                                class="fas fa-check text-bac-teal mr-2"></i>Protect
+                                            and future proof your legacy</li>
+                                        <li class="flex items-baseline"><i
+                                                class="fas fa-check text-bac-teal mr-2"></i>Maximise value and prepare
+                                            to
+                                            sell</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1087,22 +838,21 @@
         <!-- Timeline Section -->
         <section class="py-16 bg-gray-50">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-center text-bac-text mb-16">Career & Business Timeline</h2>
+                <h2 class="text-3xl font-bold text-center text-bac-text mb-16">Career & business timeline</h2>
 
                 <div class="relative">
-                    <!-- Vertical Line -->
                     <div
                         class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform md:-translate-x-1/2">
                     </div>
 
-                    <!-- Item 1: 1992-1995 -->
+                    <!-- Item 1 -->
                     <div class="relative z-10 mb-12">
                         <div class="md:flex items-center justify-between">
                             <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-light rounded-full border-4 border-white shadow"></span>
+                                    class="absolute left-2 top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-light rounded-full border-4 border-white shadow"></span>
                                 <h3 class="text-xl font-bold text-bac-title">1992 - 1995</h3>
-                                <h4 class="font-bold text-bac-text mt-1">Education & Excellence</h4>
+                                <h4 class="font-bold text-bac-text mt-1">Education & excellence</h4>
                                 <p class="text-gray-600 text-sm mt-2">Commenced and graduated Bachelor of Applied
                                     Science in Physiotherapy from UniSA.</p>
                             </div>
@@ -1110,14 +860,14 @@
                         </div>
                     </div>
 
-                    <!-- Item 2: 1997-2000 -->
+                    <!-- Item 2 -->
                     <div class="relative z-10 mb-12">
                         <div class="md:flex items-center justify-between flex-row-reverse">
                             <div class="md:w-1/2 md:pl-12 pl-12 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-[-7px] w-4 h-4 bg-bac-title rounded-full border-4 border-white shadow"></span>
+                                    class="absolute left-2 top-1.5 md:left-[-7px] w-4 h-4 bg-bac-title rounded-full border-4 border-white shadow"></span>
                                 <h3 class="text-xl font-bold text-bac-title">1996 - 2000</h3>
-                                <h4 class="font-bold text-bac-text mt-1">Early Career & Global Experience</h4>
+                                <h4 class="font-bold text-bac-text mt-1">Early career & global experience</h4>
                                 <p class="text-gray-600 text-sm mt-2">Worked in Australian public health and UK
                                     hospitals/private practice before returning to Adelaide.</p>
                             </div>
@@ -1125,28 +875,29 @@
                         </div>
                     </div>
 
-                    <!-- Item 3: 2001-2003 -->
+                    <!-- Item 3 -->
                     <div class="relative z-10 mb-12">
                         <div class="md:flex items-center justify-between">
                             <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-dark rounded-full border-4 border-white shadow"></span>
+                                    class="absolute left-2 top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-dark rounded-full border-4 border-white shadow"></span>
                                 <h3 class="text-xl font-bold text-bac-title">2001 - 2003</h3>
-                                <h4 class="font-bold text-bac-text mt-1">Founding & First Clinics</h4>
-                                <p class="text-gray-600 text-sm mt-2">Founded Ben Corso Physiotherapy. Completed Masters. Opened first two private practices in North Adelaide & SA Golf Clinic.</p>
+                                <h4 class="font-bold text-bac-text mt-1">Founding & first clinics</h4>
+                                <p class="text-gray-600 text-sm mt-2">Founded Ben Corso Physiotherapy. Completed
+                                    Masters. Opened first two private practices in North Adelaide & SA Golf Clinic.</p>
                             </div>
                             <div class="md:w-1/2 md:pl-12"></div>
                         </div>
                     </div>
 
-                    <!-- Item 4: 2005-2011 -->
+                    <!-- Item 4 -->
                     <div class="relative z-10 mb-12">
                         <div class="md:flex items-center justify-between flex-row-reverse">
                             <div class="md:w-1/2 md:pl-12 pl-12 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-[-7px] w-4 h-4 bg-bac-teal rounded-full border-4 border-white shadow"></span>
+                                    class="absolute left-2 top-1.5 md:left-[-7px] w-4 h-4 bg-bac-teal rounded-full border-4 border-white shadow"></span>
                                 <h3 class="text-xl font-bold text-bac-title">2005 - 2011</h3>
-                                <h4 class="font-bold text-bac-text mt-1">Growth & Rebrand</h4>
+                                <h4 class="font-bold text-bac-text mt-1">Growth & rebrand</h4>
                                 <p class="text-gray-600 text-sm mt-2">Expanded North Adelaide site. Rebranded to "The
                                     Physio Clinic". Built purpose-built facility in Prospect.</p>
                             </div>
@@ -1154,14 +905,14 @@
                         </div>
                     </div>
 
-                    <!-- Item 5: 2014-2019 -->
+                    <!-- Item 5 -->
                     <div class="relative z-10 mb-12">
                         <div class="md:flex items-center justify-between">
                             <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-tealdark rounded-full border-4 border-white shadow"></span>
+                                    class="absolute left-2 top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-tealdark rounded-full border-4 border-white shadow"></span>
                                 <h3 class="text-xl font-bold text-bac-title">2014 - 2019</h3>
-                                <h4 class="font-bold text-bac-text mt-1">Scaling Up</h4>
+                                <h4 class="font-bold text-bac-text mt-1">Scaling up</h4>
                                 <p class="text-gray-600 text-sm mt-2">Opened sites in Toorak Gardens & Belair. Acquired
                                     Blackwood business.</p>
                             </div>
@@ -1169,14 +920,14 @@
                         </div>
                     </div>
 
-                    <!-- Item 6: 2021 -->
+                    <!-- Item 6 -->
                     <div class="relative z-10 mb-12">
                         <div class="md:flex items-center justify-between flex-row-reverse">
                             <div class="md:w-1/2 md:pl-12 pl-12 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-[-7px] w-4 h-4 bg-bac-title rounded-full border-4 border-white shadow"></span>
+                                    class="absolute left-2 top-1.5 md:left-[-7px] w-4 h-4 bg-bac-title rounded-full border-4 border-white shadow"></span>
                                 <h3 class="text-xl font-bold text-bac-title">2021</h3>
-                                <h4 class="font-bold text-bac-text mt-1">Acquisition & Leadership</h4>
+                                <h4 class="font-bold text-bac-text mt-1">Acquisition & leadership</h4>
                                 <p class="text-gray-600 text-sm mt-2">Acquisition by Healthia Ltd. Appointed Regional
                                     Manager overseeing 15+ clinics, > $15M portfolio, and 200+ team members.</p>
                             </div>
@@ -1184,14 +935,14 @@
                         </div>
                     </div>
 
-                    <!-- Item 7: 2023 -->
+                    <!-- Item 7 -->
                     <div class="relative z-10 mb-12">
                         <div class="md:flex items-center justify-between">
                             <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0 mb-4 md:mb-0 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-dark rounded-full border-4 border-white shadow"></span>
+                                    class="absolute left-2 top-1.5 md:left-auto md:right-[-8px] w-4 h-4 bg-bac-dark rounded-full border-4 border-white shadow"></span>
                                 <h3 class="text-xl font-bold text-bac-title">2023</h3>
-                                <h4 class="font-bold text-bac-text mt-1">General Manager Role</h4>
+                                <h4 class="font-bold text-bac-text mt-1">General manager role</h4>
                                 <p class="text-gray-600 text-sm mt-2">Appointed General Manager & Group Partner at
                                     Healthia. Managed 30+ clinics, > $40M revenue, and 500+ team members.</p>
                             </div>
@@ -1199,38 +950,42 @@
                         </div>
                     </div>
 
-                    <!-- Item 8: 2026 -->
+                    <!-- Item 8 -->
                     <div class="relative z-10">
                         <div class="md:flex items-center justify-between flex-row-reverse">
                             <div class="md:w-1/2 md:pl-12 pl-12 relative">
                                 <span
-                                    class="absolute left-[-5px] top-1.5 md:left-[-12px] w-6 h-6 bg-bac-teal rounded-full border-4 border-white shadow animate-pulse"></span>
+                                    class="absolute left-[4px] top-1.5 md:left-[-12px] w-6 h-6 bg-bac-teal rounded-full border-4 border-white shadow animate-pulse"></span>
                                 <h3 class="text-2xl font-bold text-bac-teal">2026</h3>
                                 <h4 class="font-bold text-bac-text mt-1">BAC Business Consulting</h4>
                                 <p class="text-gray-600 text-sm mt-2">Launched BAC Business Consulting to help business
-                                    owners achieve similar pathways
+                                    owners achieve similar pathways.
                                     <br />
                                     Foundation clinics now generate >$4.5m in revenue and are managed by equity partners
-                                    and Team Leaders.
+                                    and team leaders.
                                 </p>
                             </div>
                             <div class="md:w-1/2 md:pr-12"></div>
                         </div>
                     </div>
-
+                </div>
+                <div class="flex justify-center items-center mt-16">
+                    <a href="3064582 BAC WEB 300dpi.jpg" target="_blank"
+                        class="underline text-bac-title font-bold hover:text-bac-dark flex items-center transition">View
+                        our full timeline</a>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section (New) -->
+        <!-- CTA Section -->
         <section class="bg-bac-teal py-16">
             <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold text-white mb-4">Ready to realize the full value of your practice?</h2>
-                <p class="text-white/90 mb-8 text-lg">Let's discuss how we can help you transition, grow, or exit with
-                    confidence.</p>
+                <h2 class="text-3xl font-bold text-white mb-4">If you want to learn more about how we can tailor our
+                    services to suit your
+                    specific business needs and goals</h2>
                 <button onclick="showPage('contact')"
                     class="px-10 py-4 bg-white text-bac-teal rounded-full font-bold shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1">
-                    Book Your Free Consultation
+                    Book your free consultation
                 </button>
             </div>
         </section>
@@ -1241,7 +996,7 @@
     <!-- ========================================== -->
     <main id="services" class="page-section flex-grow">
         <!-- Services Hero -->
-        <section class="py-20 bg-gray-50">
+        <section class="pt-20 pb-12 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Intro Split Layout with Image -->
@@ -1251,7 +1006,7 @@
                             class="inline-block px-3 py-1 bg-white text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100 shadow-sm">
                             Tailored Solutions
                         </div>
-                        <h1 class="text-4xl font-bold text-bac-text mb-6">Consulting Services</h1>
+                        <h1 class="text-4xl font-bold text-bac-text mb-6">Consulting services</h1>
                         <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                             We offer a range of consultancy services designed to meet your specific business goals.
                             Whether you are looking to transition, scale, or exit, we have a roadmap for you.
@@ -1259,6 +1014,13 @@
 
                         <!-- Goal Checklist (Vertical for better layout here) -->
                         <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
+                                    <i class="fas fa-check text-bac-teal text-xs"></i>
+                                </div>
+                                <span class="ml-3 text-gray-700 font-medium">Build clinic and brand from scratch</span>
+                            </div>
                             <div class="flex items-start">
                                 <div
                                     class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
@@ -1272,21 +1034,22 @@
                                     class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
                                     <i class="fas fa-check text-bac-teal text-xs"></i>
                                 </div>
-                                <span class="ml-3 text-gray-700 font-medium">Build a clinic & brand from scratch</span>
+                                <span class="ml-3 text-gray-700 font-medium">Scale to multi-site success and
+                                    multi-disciplinary</span>
                             </div>
                             <div class="flex items-start">
                                 <div
                                     class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
                                     <i class="fas fa-check text-bac-teal text-xs"></i>
                                 </div>
-                                <span class="ml-3 text-gray-700 font-medium">Scale to multi-site success</span>
+                                <span class="ml-3 text-gray-700 font-medium">Protect and future proof your legacy</span>
                             </div>
                             <div class="flex items-start">
                                 <div
                                     class="flex-shrink-0 h-6 w-6 rounded-full bg-bac-teal/10 flex items-center justify-center mt-0.5">
                                     <i class="fas fa-check text-bac-teal text-xs"></i>
                                 </div>
-                                <span class="ml-3 text-gray-700 font-medium">Prepare to Sell & Maximise Value</span>
+                                <span class="ml-3 text-gray-700 font-medium">Maximise value and prepare to sell</span>
                             </div>
                         </div>
                     </div>
@@ -1300,101 +1063,39 @@
                     </div>
                 </div>
 
-                <!-- Tiers Grid (Existing) -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
-                    <!-- Tier 1 -->
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-light transition duration-300 h-full flex flex-col">
-                        <div class="mb-2">
-                            <span class="text-xs font-bold text-bac-light uppercase tracking-wider">Tier 1</span>
-                            <h3 class="text-lg font-bold text-bac-text mt-1">Business consulting to read</h3>
-                        </div>
-                        <p class="text-sm text-gray-600 mb-6">Foundational support for practices looking to
-                            professionalize.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Business
-                                advisory support</li>
-                            <li class="flex items-start"><i
-                                    class="fas fa-check text-bac-teal mr-2 mt-1"></i>Operational, strategic and
-                                commercial</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Business
-                                sales marketing</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Business
-                                exit planning (non-financial product)</li>
-                        </ul>
-                        <button onclick="showPage('contact')"
-                            class="w-full py-2 border-2 border-bac-light text-bac-light font-bold rounded-lg hover:bg-bac-light hover:text-white transition mt-auto">
-                            Enquire Now
-                        </button>
-                    </div>
+                <div class="flex justify-center items-center">
+                    <h2 class="text-3xl font-bold text-bac-text mb-4 text-center">How can I build my allied health
+                        practice from<br /> the
+                        start to be a
+                        business I can sell later?</h2>
+                </div>
+                <div class="flex flex-col md:flex-row mx-auto justify-center items-start gap-16 mt-8">
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Health
+                            check</li>
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Sale
+                            readiness assessment</li>
+                    </ul>
 
-                    <!-- Tier 2 -->
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-title transition duration-300 h-full flex flex-col relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-bac-title text-white text-xs px-2 py-1 rounded-bl">Popular
-                        </div>
-                        <div class="mb-2">
-                            <span class="text-xs font-bold text-bac-title uppercase tracking-wider">Tier 2</span>
-                            <h3 class="text-lg font-bold text-bac-text mt-1">Immediate Sale</h3>
-                        </div>
-                        <p class="text-sm text-gray-600 mb-6">For owners ready to list and sell now.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Health
-                                Check</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Sale
-                                Readiness Assessment</li>
-                        </ul>
-                        <button onclick="showPage('contact')"
-                            class="w-full py-2 border-2 border-bac-title text-bac-title font-bold rounded-lg hover:bg-bac-title hover:text-white transition mt-auto">
-                            Enquire Now
-                        </button>
-                    </div>
 
-                    <!-- Tier 3 -->
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-dark transition duration-300 h-full flex flex-col">
-                        <div class="mb-2">
-                            <span class="text-xs font-bold text-bac-dark uppercase tracking-wider">Tier 3</span>
-                            <h3 class="text-lg font-bold text-bac-text mt-1">12-Month Prep</h3>
-                        </div>
-                        <p class="text-sm text-gray-600 mb-6">Maximize value over a 12-month horizon.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Normalizing
-                                P&L</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Financial
-                                Optimisation</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Protect and
-                                future proof YOUR legacy</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Includes
-                                Tier 2</li>
-                        </ul>
-                        <button onclick="showPage('contact')"
-                            class="w-full py-2 border-2 border-bac-dark text-bac-dark font-bold rounded-lg hover:bg-bac-dark hover:text-white transition mt-auto">
-                            Enquire Now
-                        </button>
-                    </div>
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Normalizing
+                            P&L</li>
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Financial
+                            optimisation</li>
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Protect and
+                            future proof YOUR legacy</li>
+                    </ul>
 
-                    <!-- Tier 4 -->
-                    <div
-                        class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-bac-tealdark transition duration-300 h-full flex flex-col">
-                        <div class="mb-2">
-                            <span class="text-xs font-bold text-bac-tealdark uppercase tracking-wider">Tier 4</span>
-                            <h3 class="text-lg font-bold text-bac-text mt-1">Growth (3-5 Years)</h3>
-                        </div>
-                        <p class="text-sm text-gray-600 mb-6">Long-term strategic partnership to scale.</p>
-                        <ul class="space-y-2 text-sm text-gray-600 mb-6 flex-grow">
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Multi-site
-                                scaling</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Deep
-                                operational tuning</li>
-                            <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Long-term
-                                exit plan</li>
-                        </ul>
-                        <button onclick="showPage('contact')"
-                            class="w-full py-2 border-2 border-bac-tealdark text-bac-tealdark font-bold rounded-lg hover:bg-bac-tealdark hover:text-white transition mt-auto">
-                            Enquire Now
-                        </button>
-                    </div>
+
+                    <ul class="space-y-2 text-gray-700 mb-6">
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Multi-site
+                            scaling</li>
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Deep
+                            operational tuning</li>
+                        <li class="flex items-start"><i class="fas fa-check text-bac-teal mr-2 mt-1"></i>Long-term
+                            exit plan</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -1421,99 +1122,27 @@
                     </div>
                     <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
                         <img src="https://media.istockphoto.com/id/1407488333/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%96%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%8D%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B8%9A%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B9%83%E0%B8%99.jpg?s=2048x2048&w=is&k=20&c=fuOYDyCjPyL2zL9TAxNkShNiBsoTK1hMc-8McTCuQ_A="
-                            alt="Maximizing Value"
+                            alt="Maximising Value"
                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <span class="text-white font-bold text-lg">Maximizing Value</span>
+                            <span class="text-white font-bold text-lg">Maximising Value</span>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="mt-6 mb-2">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget"
+                    data-url="https://calendly.com/ben-bacbusinessconsulting/business-health-check?hide_gdpr_banner=1&text_color=193546&primary_color=008ecf"
+                    style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                    async></script>
+                <!-- Calendly inline widget end -->
             </div>
         </section>
-
-        <!-- Detailed Support Section -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-bac-text mb-4">How We Support You</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">From business transition to exit planning, we specialize
-                        in
-                        helping Allied Health business owners navigate the complexities of a sale.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="flex">
-                        <div class="flex-shrink-0 mr-4">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-bac-title rounded-lg flex items-center justify-center text-xl">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-bac-text mb-2">Practice Valuation</h4>
-                            <p class="text-sm text-gray-600">We assess your clinic’s value using industry benchmarks
-                                (EBITDA, wages, occupancy) and real market data to help you understand your true worth.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex">
-                        <div class="flex-shrink-0 mr-4">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-bac-title rounded-lg flex items-center justify-center text-xl">
-                                <i class="fas fa-bullhorn"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-bac-text mb-2">Sales Plan & Marketing</h4>
-                            <p class="text-sm text-gray-600">We develop a tailored strategy and promote your practice
-                                through our network, targeting buyers who understand clinical value.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex">
-                        <div class="flex-shrink-0 mr-4">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-bac-title rounded-lg flex items-center justify-center text-xl">
-                                <i class="fas fa-filter"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-bac-text mb-2">Screening Enquiries</h4>
-                            <p class="text-sm text-gray-600">We handle initial enquiries so you can stay focused on
-                                running your practice and we work with your sales team such as your business broker to
-                                progress these enquiries and execute a sale.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex">
-                        <div class="flex-shrink-0 mr-4">
-                            <div
-                                class="w-12 h-12 bg-blue-50 text-bac-title rounded-lg flex items-center justify-center text-xl">
-                                <i class="fas fa-gavel"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-bac-text mb-2">Legal/Accountant/Business Broker</h4>
-                            <p class="text-sm text-gray-600">We collaborate with your legal, accounting and business
-                                broker as required to ensure a smooth sales process.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Business Health Check Form -->
-        <section class="py-20 bg-bac-bg border-t border-gray-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                    <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
-                        <!-- Timeline Image -->
-                        <img src="null" alt="Business Health Check Form" class="w-full h-auto object-cover"
-                            onerror="this.onerror=null; this.src='https://placehold.co/1200x600/f1f5f9/1e293b?text=Business Health Check Form placeholder';">
-                    </div>
-                </div>
-            </div>
+        <!-- Testimonials (Carousel Wrapper - Same logic as Home) -->
+        <section id="services-testimonial-section" class="py-24 bg-gray-50 overflow-hidden">
+            <!-- Content will be injected via renderTestimonials() -->
         </section>
     </main>
 
@@ -1521,7 +1150,7 @@
     <!-- PAGE: PROCESS -->
     <!-- ========================================== -->
     <main id="process" class="page-section flex-grow">
-        <section class="py-20 bg-white">
+        <section class="pt-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Process Hero Split -->
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -1530,16 +1159,16 @@
                             class="inline-block px-3 py-1 bg-blue-50 text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100 shadow-sm">
                             The Roadmap
                         </div>
-                        <h1 class="text-4xl font-bold text-bac-text mb-6">Sale Preparation Roadmap</h1>
+                        <h1 class="text-4xl font-bold text-bac-text mb-6">Sale preparation roadmap</h1>
                         <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                             Selling your practice is a journey, not an event. We use a structured 9-step process to
-                            maximize your business value and ensure a seamless exit.
+                            maximise your business value and ensure a seamless exit.
                         </p>
                     </div>
                 </div>
 
                 <!-- Visual Phase Grid -->
-                <div class="grid md:grid-cols-3 gap-8 mb-24">
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
                     <!-- Phase 1 Image -->
                     <div class="relative group rounded-xl overflow-hidden shadow-lg h-64 border border-gray-100">
                         <img src="https://media.istockphoto.com/id/2203914027/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%8D%E0%B8%B2%E0%B9%80%E0%B8%AA%E0%B8%99%E0%B8%AD%E0%B8%97%E0%B8%B5%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%99%E0%B9%8D%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%83%E0%B8%99%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%A2.jpg?s=2048x2048&w=is&k=20&c=DT2CwOhaE1KlOCVaKAbUkRZoQ8t3jR_kWq_ORSxqZic="
@@ -1574,285 +1203,17 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Vertical Timeline Container -->
-                <div class="relative max-w-5xl mx-auto">
-                    <!-- Central Line -->
-                    <div
-                        class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-100 transform -translate-x-1/2 rounded-full">
-                    </div>
-
-                    <!-- Phase 1: Preparation (Light Blue Theme) -->
-                    <div class="mb-12 relative">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 md:pb-16">
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
                         <div
-                            class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-top-10 mb-8 md:mb-0 text-center">
-                            <span
-                                class="inline-block px-4 py-1 rounded-full bg-blue-50 text-bac-light text-xs font-bold uppercase tracking-wider border border-blue-100">Phase
-                                1: Preparation</span>
+                            class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
+                            <!-- Timeline Image -->
+                            <img src="null" alt="Sale Placeholder Form" class="w-full h-auto object-cover"
+                                onerror="this.onerror=null; this.src='https://placehold.co/1200x600/f1f5f9/1e293b?text=Sale Placeholder Form placeholder';">
                         </div>
-                    </div>
-
-                    <!-- Step 1 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <h3 class="text-xl font-bold text-bac-text">Initial Consultation</h3>
-                                <p class="text-gray-600 mt-2">Confidential discussion to understand your goals,
-                                    timeline, and exit strategy.</p>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-light rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-phone text-bac-light text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -right-3 w-8 h-8 bg-bac-light text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        1</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text md:hidden">Initial Consultation</h3>
-                                <p class="text-gray-600 mt-2 md:hidden">Confidential discussion to understand your
-                                    goals, timeline, and exit strategy.</p>
-                                <span class="hidden md:block text-sm text-gray-400 font-medium">Step 01</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <span class="text-sm text-gray-400 font-medium">Step 02</span>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-light rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-clipboard-list text-bac-light text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -left-3 w-8 h-8 bg-bac-light text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        2</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text">Information Gathering</h3>
-                                <p class="text-gray-600 mt-2">Collection of P&L statements, lease agreements, and
-                                    patient statistics.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <h3 class="text-xl font-bold text-bac-text">Business Health Check</h3>
-                                <p class="text-gray-600 mt-2">Review of operational readiness, compliance, and team
-                                    structure.</p>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-light rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-heartbeat text-bac-light text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -right-3 w-8 h-8 bg-bac-light text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        3</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text md:hidden">Business Health Check</h3>
-                                <p class="text-gray-600 mt-2 md:hidden">Review of operational readiness, compliance, and
-                                    team structure.</p>
-                                <span class="hidden md:block text-sm text-gray-400 font-medium">Step 03</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Phase 2: Strategy (Brand Blue Theme) -->
-                    <div class="mb-12 relative">
-                        <div
-                            class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-top-10 mb-8 md:mb-0 text-center">
-                            <span
-                                class="inline-block px-4 py-1 rounded-full bg-blue-50 text-bac-title text-xs font-bold uppercase tracking-wider border border-blue-100">Phase
-                                2: Strategy</span>
-                        </div>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <span class="text-sm text-gray-400 font-medium">Step 04</span>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-title rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-calculator text-bac-title text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -left-3 w-8 h-8 bg-bac-title text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        4</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text">Practice Valuation</h3>
-                                <p class="text-gray-600 mt-2">Analysis using industry benchmarks (EBITDA, wages) to
-                                    determine market value.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 5 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <h3 class="text-xl font-bold text-bac-text">Optimization</h3>
-                                <p class="text-gray-600 mt-2">Addressing gaps, normalizing P&L, and preparing the Sales
-                                    Prospectus.</p>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-title rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-tools text-bac-title text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -right-3 w-8 h-8 bg-bac-title text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        5</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text md:hidden">Optimization</h3>
-                                <p class="text-gray-600 mt-2 md:hidden">Addressing gaps, normalizing P&L, and preparing
-                                    the Sales Prospectus.</p>
-                                <span class="hidden md:block text-sm text-gray-400 font-medium">Step 05</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-12 relative">
-                        <div
-                            class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-top-16 mb-8 md:mb-0 text-center">
-                            <span
-                                class="inline-block px-4 py-1 rounded-full bg-gray-100 text-xs font-semibold tracking-wider">REFER
-                                TO SALES TEAM eg Business Broker</span>
-                        </div>
-                    </div>
-
-                    <!-- Step 6 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <span class="text-sm text-gray-400 font-medium">Step 06</span>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-title rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-bullhorn text-bac-title text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -left-3 w-8 h-8 bg-bac-title text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        6</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text">Marketing & Screening</h3>
-                                <p class="text-gray-600 mt-2">Listing.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Phase 3: Execution (Teal Theme) -->
-                    <div class="mb-12 relative">
-                        <div
-                            class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-top-10 mb-8 md:mb-0 text-center">
-                            <span
-                                class="inline-block px-4 py-1 rounded-full bg-blue-50 text-bac-teal text-xs font-bold uppercase tracking-wider border border-blue-100">Phase
-                                3: Execution</span>
-                        </div>
-                    </div>
-
-                    <!-- Step 7 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <h3 class="text-xl font-bold text-bac-text">Negotiation</h3>
-                                <p class="text-gray-600 mt-2">We assist with price, terms, and conditions to secure the
-                                    best deal.</p>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-teal rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-handshake text-bac-teal text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -right-3 w-8 h-8 bg-bac-teal text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        7</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text md:hidden">Negotiation</h3>
-                                <p class="text-gray-600 mt-2 md:hidden">We assist with price, terms, and conditions to
-                                    secure the best deal.</p>
-                                <span class="hidden md:block text-sm text-gray-400 font-medium">Step 07</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 8 -->
-                    <div class="relative z-10 mb-12 md:mb-24">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <span class="text-sm text-gray-400 font-medium">Step 08</span>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-white border-4 border-bac-teal rounded-full flex items-center justify-center shadow-lg relative z-10">
-                                    <i class="fas fa-file-contract text-bac-teal text-2xl"></i>
-                                    <div
-                                        class="absolute -top-3 -left-3 w-8 h-8 bg-bac-teal text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                        8</div>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text">Legal & Admin</h3>
-                                <p class="text-gray-600 mt-2">Coordination with legal teams for smooth transfer of
-                                    contracts and leases.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 9 -->
-                    <div class="relative z-10">
-                        <div class="md:flex items-center justify-between">
-                            <div class="md:w-5/12 order-2 md:order-1 text-right pr-8 hidden md:block">
-                                <h3 class="text-xl font-bold text-bac-text">Completion & Handover</h3>
-                                <p class="text-gray-600 mt-2">Finalizing the transaction and managing the transition
-                                    period.</p>
-                            </div>
-                            <div class="md:w-2/12 order-1 md:order-2 flex justify-center mb-4 md:mb-0">
-                                <div
-                                    class="w-16 h-16 bg-bac-teal text-white rounded-full flex items-center justify-center shadow-xl relative z-10 transform scale-110 ring-4 ring-blue-50">
-                                    <i class="fas fa-key text-2xl"></i>
-                                </div>
-                            </div>
-                            <div class="md:w-5/12 order-3 md:order-3 pl-0 md:pl-8 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-bac-text md:hidden">Completion & Handover</h3>
-                                <p class="text-gray-600 mt-2 md:hidden">Finalizing the transaction and managing the
-                                    transition period.</p>
-                                <span class="hidden md:block text-sm text-gray-400 font-medium">Step 09</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Sale Placeholder Form -->
-        <section class="py-20 bg-bac-bg border-t border-gray-200">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                    <div class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
-                        <!-- Timeline Image -->
-                        <img src="null" alt="Sale Placeholder Form" class="w-full h-auto object-cover"
-                            onerror="this.onerror=null; this.src='https://placehold.co/1200x600/f1f5f9/1e293b?text=Sale Placeholder Form placeholder';">
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
@@ -1861,15 +1222,15 @@
     <!-- PAGE: CONTACT -->
     <!-- ========================================== -->
     <main id="contact" class="page-section flex-grow">
-        <section class="py-20 bg-white">
+        <section class="pt-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h1 class="text-4xl font-bold text-bac-text mb-6">Contact Us</h1>
-                    <p class="text-xl text-gray-600">Ready to grow, optimize, or prepare for sale? Contact us today for
+                <div class="text-center mb-4">
+                    <h1 class="text-4xl font-bold text-bac-text mb-6">Contact us</h1>
+                    <p class="text-xl text-gray-600">Ready to grow, optimise, or prepare for sale? Contact us today for
                         a confidential consultation.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-bac-title h-full">
+                <div class="flex flex-row gap-4 min-h-[90vh]">
+                    <!-- <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-bac-title h-full">
                         <h3 class="text-2xl font-bold mb-8 text-bac-text">Get in Touch</h3>
                         <div class="space-y-8">
                             <div class="flex items-start">
@@ -1896,16 +1257,24 @@
                             </div>
                         </div>
                         <div class="mt-8 bg-blue-50 p-6 rounded-lg border border-blue-100">
-                            <h4 class="font-bold text-lg mb-2 text-bac-dark">Consultation Options</h4>
+                            <h4 class="font-bold text-lg mb-2 text-bac-dark">Consultation options</h4>
                             <p class="text-gray-600 text-sm">We offer flexible meeting options including Phone, Email,
                                 or Zoom/Teams video calls to suit your schedule.</p>
                         </div>
-                    </div>
-                    <img src="null" alt="Calendly Form"
-                        class="w-full h-full object-cover text-wrap break-all p-4 whitespace-nowrap"
-                        onerror="this.onerror=null; this.src='https://placehold.co/1200x600/f1f5f9/1e293b?text=Calendly%20Form%0Aplaceholder';">
+                    </div> -->
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget w-full"
+                        data-url="https://calendly.com/ben-bacbusinessconsulting/website-contact-form?hide_gdpr_banner=1&text_color=193546&primary_color=008ecf"
+                        style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                        async></script>
+                    <!-- Calendly inline widget end -->
                 </div>
             </div>
+            <!-- Testimonials (Carousel Wrapper - Same logic as Home) -->
+            <section id="contact-testimonial-section" class="py-24 bg-gray-50 overflow-hidden">
+                <!-- Content will be injected via renderTestimonials() -->
+            </section>
         </section>
     </main>
 
@@ -1917,40 +1286,173 @@
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h1 class="text-4xl font-bold text-bac-text mb-6">Disclaimer</h1>
-                    <p class="text-xl text-gray-600">Important information regarding our services and advice.</p>
+                    <p class="text-xl text-gray-600">Important information regarding the scope of our services and
+                        advice.</p>
                 </div>
 
                 <div class="prose prose-lg text-gray-600 mx-auto">
-                    <h3 class="text-bac-title font-bold mb-4">General Advice Warning</h3>
+                    <h3 class="text-bac-title font-bold mb-4">Scope of Services</h3>
+                    <p>BAC Business Consulting provides professional services in the following areas:</p>
+                    <ul class="list-disc pl-6 mb-6">
+                        <li>Business consulting and advisory</li>
+                        <li>Operational, strategic, and commercial consulting</li>
+                        <li>Business sales marketing</li>
+                        <li>Business exit planning (Non-financial product)</li>
+                    </ul>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Nature of Advice (Non-Financial Product)</h3>
+                    <p>It is important to understand that our <strong>Business Exit Planning</strong> service is a
+                        <strong>non-financial product</strong>. Our consulting focuses on operational readiness,
+                        strategic positioning, brand value, and market preparation to help you maximise the potential
+                        value of your practice.
+                    </p>
+                    <p>We do not provide financial product advice, investment advice, or deal in financial securities.
+                        Any discussion regarding business value is based on industry benchmarks and operational metrics,
+                        not a formal financial valuation for lending or statutory purposes.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">General Advice Warning</h3>
                     <p>The information provided on this website and during consultations is for general informational
-                        purposes only. It is not intended to be a substitute for professional legal, financial, or
-                        accounting advice. While we strive to keep the information up to date and correct, we make no
-                        representations or warranties of any kind, express or implied, about the completeness, accuracy,
-                        reliability, suitability, or availability with respect to the website or the information,
-                        products, services, or related graphics contained on the website for any purpose.</p>
+                        and educational purposes only. It is not intended to be a substitute for professional legal,
+                        taxation, or accounting advice. While we strive to provide accurate and up-to-date industry
+                        insights, we make no representations or warranties of any kind, express or implied, about the
+                        completeness, accuracy, reliability, suitability, or availability of the information for any
+                        particular purpose.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Professional Consultation Recommended</h3>
+                    <p>We strongly recommend that you consult with your own independent legal, financial, and accounting
+                        professionals before making any significant business decisions, such as selling your practice,
+                        restructuring your business, or entering into equity partnerships. BAC Business Consulting is
+                        not a licensed financial advisor, business broker, lawyer, or accountant.</p>
 
                     <h3 class="text-bac-title font-bold mb-4 mt-8">No Guarantees</h3>
-                    <p>Any reliance you place on such information is therefore strictly at your own risk. BAC Business
-                        Consulting cannot guarantee specific results or outcomes from our services, as success depends
-                        on numerous factors including market conditions, your own efforts, and other variables beyond
-                        our control.</p>
-
-                    <h3 class="text-bac-title font-bold mb-4 mt-8">Professional Consultation</h3>
-                    <p>We strongly recommend that you consult with your own legal, financial, and accounting
-                        professionals before making any significant business decisions, such as selling your practice or
-                        restructuring your business. BAC Business Consulting is not a licensed financial advisor,
-                        lawyer, or accountant.</p>
-
-                    <h3 class="text-bac-title font-bold mb-4 mt-8">Limitation of Liability</h3>
-                    <p>In no event will we be liable for any loss or damage including without limitation, indirect or
-                        consequential loss or damage, or any loss or damage whatsoever arising from loss of data or
-                        profits arising out of, or in connection with, the use of this website or our services.</p>
+                    <p>Any reliance you place on our information or advice is strictly at your own risk. BAC Business
+                        Consulting cannot guarantee specific sale prices, forecasts timeframes, or outcomes, as success
+                        depends on
+                        numerous factors including market conditions, your own efforts, and other variables beyond our
+                        control.</p>
                 </div>
 
                 <div class="mt-12 text-center">
                     <button onclick="showPage('contact')"
                         class="px-8 py-3 bg-bac-title text-white rounded-full font-bold hover:bg-bac-dark shadow-md transition">
-                        Contact Us for Clarification
+                        Contact us for clarification
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- PAGE: PRIVACY POLICY (NEW) -->
+    <!-- ========================================== -->
+    <main id="privacy" class="page-section flex-grow">
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-bac-text mb-6">Privacy policy</h1>
+                    <p class="text-xl text-gray-600">How we collect, access, store and use your personal information.
+                    </p>
+                </div>
+
+                <div class="prose prose-lg text-gray-600 mx-auto">
+                    <p>BAC business consulting ABN 72 116 893 246 (we, us or our) is committed to protecting your
+                        privacy and is subject to the National Privacy Principles as set out in the Privacy Act 1988
+                        (Cth) (Act). This statement sets out our policy on how we collect, access, store and use your
+                        personal information which we obtain as part of our business operations.</p>
+                    <p>All personal information is handled sensitively, securely and in accordance with this privacy
+                        policy and the National Privacy Principles.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Collection of personal information</h3>
+                    <p>We will only collect such personal information from you as is necessary to provide our services
+                        and conduct our business.</p>
+                    <p>The personal information we generally collect includes your name, address and contact details. We
+                        may also collect further personal information necessary to perform any services you have
+                        requested or to conduct our business generally.</p>
+                    <p>As far as is reasonable and practicable, this information will be collected from you personally.
+                        However, we may obtain personal information about you from a third party. If this occurs, we
+                        will take reasonable steps to ensure you are aware of the situation.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Use and disclosure of personal information</h3>
+                    <p>The personal information we collect about you will only be used and disclosed in order to provide
+                        you with the services you have requested, as well as in circumstances you would reasonably
+                        expect us to use and disclose the information.</p>
+                    <p>To the extent permitted by the Act, in order to assess your application for credit or to collect
+                        overdue payments from you, we may need to:</p>
+                    <ul class="list-disc pl-6 mb-6">
+                        <li>make enquiries with persons nominated by you as trade references in the Credit Application
+                            to which this statement is annexed (Credit Application), your bankers, any other credit
+                            provider or credit reporting agency regarding your personal and commercial credit
+                            information;</li>
+                        <li>obtain credit reports about you from credit reporting agencies;</li>
+                        <li>provide to and exchange your personal information with any person whose name you give to us
+                            in connection with your Credit Application;</li>
+                        <li>provide to and exchange your personal information with our collection agents; and</li>
+                        <li>exchange your personal information with any credit providers named in your Credit
+                            Application or named in a consumer credit report issued by a credit reporting agency in
+                            order to assess an application for credit by you, notify other credit providers of a default
+                            by you or to assess your credit worthiness.</li>
+                    </ul>
+                    <p>We may also use your personal information to provide you with superior services and for the
+                        purposes of direct marketing in communicating to you information regarding news and events, our
+                        products and services. You may notify us if you do not want us to send you information for other
+                        than the main purpose for which we have collected your personal information.</p>
+                    <p>Your personal information will not be used for any other purposes without your consent.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Disclosure of personal information to third parties
+                    </h3>
+                    <p>We may disclose your personal information to third parties in accordance with this policy in
+                        circumstances where you would reasonably expect us to disclose your information. For example, we
+                        may disclose your personal information to:</p>
+                    <ul class="list-disc pl-6 mb-6">
+                        <li>our third party service providers (for example, our IT providers);</li>
+                        <li>our marketing providers;</li>
+                        <li>our professional services advisors;</li>
+                    </ul>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">How we protect your personal information</h3>
+                    <p>BAC business consulting will take reasonable steps to ensure that the personal information that
+                        we hold about you is kept confidential and secure, including:</p>
+                    <ul class="list-disc pl-6 mb-6">
+                        <li>having a robust physical security of our premises and databases / records;</li>
+                        <li>taking measures to restrict access to only personnel who need that personal information to
+                            effectively provide services to you;</li>
+                        <li>having technological measures in place (for example, anti-virus software, firewalls).</li>
+                        <li>Antivirus protection via Office 365</li>
+                        <li>File copy via OneDrive – which syncs to the Microsoft cloud</li>
+                    </ul>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Quality of personal information</h3>
+                    <p>We will take reasonable steps to ensure the personal information we collect, use and disclose is
+                        accurate, complete and up to date.</p>
+                    <p>If you believe the personal information we hold about you is not accurate, complete or up to
+                        date, please contact us and we will take reasonable steps to ensure it is corrected.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Security of personal information</h3>
+                    <p>The security of your personal information is of paramount importance to us.</p>
+                    <p>We will take reasonable steps to protect such information from misuse and loss. If we no longer
+                        require your personal information, we will take reasonable steps to ensure it is destroyed or
+                        permanently de-identified.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Access to personal information</h3>
+                    <p>You may make a request if you would like to gain access to your personal information held by us.
+                        If we are able to grant your request, a fee may be charged. If we refuse your request, we will
+                        provide reasons for the refusal.</p>
+                    <p>If you need to update your information, please contact us.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Updating our privacy policy</h3>
+                    <p>Our privacy policy may be amended by us from time to time.</p>
+
+                    <h3 class="text-bac-title font-bold mb-4 mt-8">Contact us</h3>
+                    <p>If you wish to contact us in relation to any queries or complaints about how your personal
+                        information is collected and used or our privacy policy in general, please contact us at: <a
+                            href="https://bacbusinessconsulting.com.au"
+                            class="text-bac-title hover:underline">bacbusinessconsulting.com.au</a></p>
+                </div>
+
+                <div class="mt-12 text-center border-t border-gray-100 pt-12">
+                    <button onclick="showPage('contact')"
+                        class="px-8 py-3 bg-bac-title text-white rounded-full font-bold hover:bg-bac-dark shadow-md transition">
+                        Speak with Ben Corso
                     </button>
                 </div>
             </div>
@@ -1967,7 +1469,7 @@
                         transition, and strategic sales.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4 text-bac-light">Quick Links</h4>
+                    <h4 class="font-bold mb-4 text-bac-light">Quick links</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><button onclick="showPage('home')" class="hover:text-white transition">Home</button></li>
                         <li><button onclick="showPage('about')" class="hover:text-white transition">About Us</button>
@@ -1982,17 +1484,20 @@
                     <h4 class="font-bold mb-4 text-bac-light">Resources</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><button onclick="showPage('process')" class="hover:text-white transition">Sales
-                                Process</button></li>
-                        <li><button onclick="showPage('stories')" class="hover:text-white transition">Success
-                                Stories</button></li>
+                                process</button></li>
                         <li><button onclick="showPage('disclaimer')"
                                 class="hover:text-white transition">Disclaimer</button></li>
+                        <li><button onclick="showPage('privacy')" class="hover:text-white transition">Privacy
+                                policy</button></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold mb-4 text-bac-light">Contact</h4>
-                    <p class="text-sm text-gray-400 mb-2">ben@bacbusinessconsulting.com.au</p>
-                    <p class="text-sm text-gray-400">0411 774 335</p>
+                    <div><a href="mailto:ben@bacbusinessconsulting.com.au"
+                            class="text-sm text-gray-400 mb-2 hover:text-white transition">ben@bacbusinessconsulting.com.au</a>
+                    </div>
+                    <div><a href="tel:0411774335" class="text-sm text-gray-400 hover:text-white transition">0411 774
+                            335</a></div>
                 </div>
             </div>
             <div class="border-t border-gray-700 pt-8 text-center text-xs text-gray-500">
@@ -2026,16 +1531,49 @@
             document.getElementById('mobile-menu').classList.toggle('open');
         }
 
+        const testimonialData = [
+            {
+                quote: "Ben is an experienced and respected Physiotherapist and business owner. He's seen and done it all... Having known Ben all of my career and using him as a sounding board many times, I can highly recommend his services.",
+                author: "Peter Tziavrangos",
+                role: "Managing director, Move for Better Health<br>Non-exec director & VP, Australian Physiotherapy Association"
+            },
+            {
+                quote: "His knowledge of the corporate sector is immense. I have absolutely no hesitation in recommending anyone to use his services... you will get a handsome return for your investment.",
+                author: "Antony Hirst",
+                role: "Chair national business group, APA"
+            },
+            {
+                quote: "I have worked with Ben Corso... for over 15 years. I have watched him grow a private allied health practice... and then sell to an aggregator. I have also been the beneficiary of his advice in my own practice.",
+                author: "Bill McTigue",
+                role: "Director, Mentone Physio"
+            },
+            {
+                quote: "Ben's honesty and strategic clarity will give you the confidence to move forward with purpose. Whether you're considering a sale, navigating growth stages, or planning your exit strategy.",
+                author: "Annette Tonkin",
+                role: "Thinking Physio"
+            },
+            {
+                quote: "Critically Ben is able to distil what is really important and provide outcome focussed strategies that work... Our team would highly recommend Ben.",
+                author: "Assoc. Prof. Phil Calvert",
+                role: "Chair, ACSEP<br>Past president, Australian Physiotherapy Association"
+            },
+            {
+                quote: "His strategic insight has played a meaningful role in shaping our growth... from assessing the benefits of purchasing a commercial property to navigating the complexities of a purpose-built clinic.",
+                author: "David Giles",
+                role: "Director, The Injury Hub"
+            }
+        ];
+
         // --- Blog Data & Logic ---
         const blogs = {
             1: {
-                category: "Financial Health",
-                title: "What is a Normalized P&L and Why Does It Matter?",
+                category: "Financial health",
+                title: "What is a normalised P&L and why does it matter?",
                 content: `
-                    <h3>What is a Normalized P&L?</h3>
-                    <p>When preparing your allied health business for sale or simply trying to understand its true financial performance, one term you’ll often hear is “normalized P&L”—sometimes called a “clean” P&L. But what does that mean?</p>
-                    <p>A normalized Profit and Loss statement removes any expenses or income that are not directly related to the core operations of your business. This gives potential buyers, investors, or even you as the owner a clear picture of how the business truly performs under normal conditions.</p>
-                    <h3>What Are Add-Backs?</h3>
+                    <h3>What is a normalised P&L?</h3>
+                    <p>When preparing your allied health business for sale or simply trying to understand its true financial performance, one term you’ll often hear is “normalised P&L”—sometimes called a “clean” P&L. But what does that mean?</p>
+                    <p>A normalised Profit and Loss statement removes any expenses or income that are not directly related to the core operations of your business. This gives potential buyers, investors, or even you as the owner a clear picture of how the business truly performs under normal conditions.</p>
+                    <h3>What are add-backs?</h3>
                     <p>Add-backs are adjustments made to your P&L to account for non-business or discretionary expenses that reduce reported profit but wouldn’t exist under new ownership. Common examples include:</p>
                     <ul>
                         <li><strong>Personal vehicles:</strong> Car payments for personal use run through the business.</li>
@@ -2047,63 +1585,63 @@
             },
             2: {
                 category: "Strategy",
-                title: "How Should You Pay Yourself as a Practice Owner?",
+                title: "How should you pay yourself as a practice owner?",
                 content: `
-                    <h3>The Owner's Dilemma</h3>
+                    <h3>The owner's dilemma</h3>
                     <p>Owning an allied health practice comes with unique challenges—one of the biggest being how to pay yourself fairly. Unlike employees, owners juggle multiple roles: clinician, manager, strategist, and sometimes even receptionist.</p>
-                    <h3>Clinical vs. Administrative Pay</h3>
+                    <h3>Clinical vs. administrative pay</h3>
                     <p>Your pay should reflect the hat you are wearing. If you treat patients 20 hours a week, you should be paid a clinician's wage for those hours. If you spend 20 hours managing the business, you should be paid a practice manager's wage for that time.</p>
-                    <h3>Why It Matters for Valuation</h3>
-                    <p>When you sell, a buyer will need to replace you. If you are taking a $50k salary but doing $150k worth of work, your profit looks artificially high. A savvy buyer will "normalize" this, reducing your EBITDA and potentially your sale price. Paying yourself a market rate ensures your P&L reflects reality.</p>
+                    <h3>Why it matters for valuation</h3>
+                    <p>When you sell, a buyer will need to replace you. If you are taking a $50k salary but doing $150k worth of work, your profit looks artificially high. A savvy buyer will "normalise" this, reducing your EBITDA and potentially your sale price. Paying yourself a market rate ensures your P&L reflects reality.</p>
                 `
             },
             3: {
                 category: "Valuation",
-                title: "EBITDA: What It Is and Why It Matters",
+                title: "EBITDA: What it is and why it matters",
                 content: `
                     <h3>Defining EBITDA</h3>
                     <p>EBITDA stands for <strong>Earnings Before Interest, Taxes, Depreciation, and Amortization</strong>. In the world of business sales, it is the gold standard for measuring operating profitability.</p>
-                    <h3>The Valuation Formula</h3>
+                    <h3>The valuation formula</h3>
                     <p>Most allied health practices are valued using a multiple of EBITDA. For example, if your EBITDA is $200,000 and the industry multiple is 3x, your business value is roughly $600,000.</p>
-                    <h3>Improving Your EBITDA</h3>
+                    <h3>Improving your EBITDA</h3>
                     <p>Small improvements in efficiency can have a massive impact on your exit value. Reducing wage costs by just 2% or increasing occupancy by 5% can add tens of thousands to your bottom line—and hundreds of thousands to your final sale price.</p>
                 `
             },
             4: {
-                category: "Exit Strategy",
-                title: "Top 10 Things Buyers Look For",
+                category: "Exit strategy",
+                title: "Top 10 things buyers look for",
                 content: `
-                    <h3>1. Steady Growth</h3>
+                    <h3>1. Steady growth</h3>
                     <p>Buyers want to see a consistent upward trend in revenue and patient numbers year-over-year.</p>
-                    <h3>2. Not Dependent on the Owner</h3>
+                    <h3>2. Not dependent on the owner</h3>
                     <p>A business that collapses when the owner goes on holiday is not an asset; it's a liability. Buyers pay a premium for "under management" structures.</p>
-                    <h3>3. Strong Leases</h3>
+                    <h3>3. Strong leases</h3>
                     <p>Secure tenure with options to renew gives buyers confidence in the location's longevity.</p>
-                    <h3>4. Clean Financials</h3>
-                    <p>As discussed in our P&L article, transparent and normalized financials build trust immediately.</p>
+                    <h3>4. Clean financials</h3>
+                    <p>As discussed in our P&L article, transparent and normalised financials build trust immediately.</p>
                 `
             },
             5: {
-                category: "Growth Strategy",
-                title: "How to Scale Your Time as a Clinician and Create Value Without You in the Business",
+                category: "Growth strategy",
+                title: "How to scale your time as a clinician and create value without you in the business",
                 content: `
-                    <h3>The Challenge</h3>
+                    <h3>The challenge</h3>
                     <p>Most of us enter this great profession because we are passionate about helping people. We become great clinicians through hard work, persistence and an investment in our continuing education. Some of us then find ourselves by accident running a business and the challenge then begins: how do I transition from clinician to business owner?</p>
                     <p>One of the earlier realisations which led to the creation of our brand was that the business had limited value if it depended on myself seeing all the patients. With the support of my business advisor, I set about trying to change that.</p>
 
-                    <h3>Step 1: Building a Leadership Team</h3>
+                    <h3>Step 1: Building a leadership team</h3>
                     <p>We structured a model around Team Leaders being the key reports for all clinical and admin issues. This included both senior physios and practice management staff. My job then became to support the Leadership team. Pleasingly today those same team leaders post my business sale are now equity partners in the business.</p>
 
-                    <h3>Step 2: Document Everything</h3>
+                    <h3>Step 2: Document everything</h3>
                     <p>Create SOPs for clinical care, admin processes, and marketing. Early on we had lengthy and clunky P&P manuals where I documented everything including my treatment approach and philosophy. Later we transferred this to an intranet site for ease of access for all team members.</p>
 
-                    <h3>Step 3: Invest in Technology</h3>
+                    <h3>Step 3: Invest in technology</h3>
                     <p>The biggest shift in my business early on was shifting from paper to paperless notes. The next shift was to move to a cloud-based system. Now, we have adopted the use of AI clinical notes which is a gamechanger.</p>
 
-                    <h3>Step 4: Shift Your Role</h3>
+                    <h3>Step 4: Shift your role</h3>
                     <p>Move from clinician to CEO (if that’s what you want!). Whilst I enjoyed being a clinician, it became clear that my greatest impact on clinical outcomes would be through mentoring and supporting team members to deliver the same high-quality care.</p>
 
-                    <h3>Step 5: Create Recurring Revenue Streams</h3>
+                    <h3>Step 5: Create recurring revenue streams</h3>
                     <p>Memberships, programs, and partnerships make revenue less dependent on your hours. We partnered with gym affiliations, sporting clubs and private hospitals which ensured a steady stream of new referrals that were repeatable year in year out.</p>
 
                     <h3>Outcome</h3>
@@ -2123,10 +1661,142 @@
             showPage('blog-detail');
         }
 
-        // Initialize
+        // --- Carousel Logic ---
+        let currentSlide = 0;
+        let slidesPerView = 1;
+
+        /**
+         * Renders the Carousel HTML into specified containers
+         */
+        function renderTestimonials() {
+            const containers = ['home-testimonial-section', 'services-testimonial-section', 'contact-testimonial-section'];
+
+            const carouselHTML = `
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8 md:mb-16">
+                    <h2 class="text-3xl font-bold text-bac-text">Client success stories</h2>
+                    <p class="text-gray-500 mt-2">Hear from those who have successfully scaled and exited.</p>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                    <div class="overflow-hidden">
+                        <div class="carousel-track">
+                            ${testimonialData.map(t => `
+                                <div class="carousel-slide px-4">
+                                    <div class="bg-white p-8 rounded-3xl border border-gray-100 h-full flex flex-col">
+                                        <i class="fas fa-quote-left text-3xl text-bac-title/20 mb-6"></i>
+                                        <p class="italic text-gray-700 text-sm leading-relaxed mb-8 flex-grow">
+                                            "${t.quote}"
+                                        </p>
+                                        <div class="border-l-2 border-bac-teal pl-4 text-left">
+                                            <div class="font-bold text-bac-text text-sm mb-1">${t.author}</div>
+                                            <div class="text-[0.7rem] text-gray-500 leading-snug">${t.role}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <button onclick="prevSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 lg:-translate-x-12 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-bac-title hover:bg-bac-title hover:text-white transition-all z-20 focus:outline-none">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 lg:translate-x-12 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-bac-title hover:bg-bac-title hover:text-white transition-all z-20 focus:outline-none">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="carousel-dots flex justify-center space-x-2 mt-10"></div>
+                </div>
+            `;
+
+            containers.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = carouselHTML;
+            });
+        }
+
+        function updateCarouselMetrics() {
+            if (window.innerWidth >= 1024) slidesPerView = 3;
+            else if (window.innerWidth >= 640) slidesPerView = 2;
+            else slidesPerView = 1;
+
+            const totalSlides = testimonialData.length;
+            if (currentSlide > totalSlides - slidesPerView) {
+                currentSlide = Math.max(0, totalSlides - slidesPerView);
+            }
+            renderDots();
+            updateCarouselPosition();
+        }
+
+        function renderDots() {
+            const dotContainers = document.querySelectorAll('.carousel-dots');
+            const numDots = testimonialData.length - slidesPerView + 1;
+
+            dotContainers.forEach(container => {
+                container.innerHTML = '';
+                for (let i = 0; i < numDots; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === currentSlide ? 'bg-bac-title w-6' : 'bg-gray-300'}`;
+                    dot.onclick = () => goToSlide(i);
+                    container.appendChild(dot);
+                }
+            });
+        }
+
+        function updateCarouselPosition() {
+            const tracks = document.querySelectorAll('.carousel-track');
+            const movePercentage = (100 / slidesPerView) * currentSlide;
+
+            tracks.forEach(track => {
+                track.style.transform = `translateX(-${movePercentage}%)`;
+            });
+
+            // Update all dot containers
+            document.querySelectorAll('.carousel-dots').forEach(container => {
+                const dots = container.children;
+                for (let i = 0; i < dots.length; i++) {
+                    if (i === currentSlide) {
+                        dots[i].classList.add('bg-bac-title', 'w-6');
+                        dots[i].classList.remove('bg-gray-300');
+                    } else {
+                        dots[i].classList.remove('bg-bac-title', 'w-6');
+                        dots[i].classList.add('bg-gray-300');
+                    }
+                }
+            });
+        }
+
+        function nextSlide() {
+            if (currentSlide < testimonialData.length - slidesPerView) {
+                currentSlide++;
+            } else {
+                currentSlide = 0;
+            }
+            updateCarouselPosition();
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+            } else {
+                currentSlide = Math.max(0, testimonialData.length - slidesPerView);
+            }
+            updateCarouselPosition();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarouselPosition();
+        }
+
+        // --- Initialisation ---
         document.addEventListener('DOMContentLoaded', () => {
+            renderTestimonials();
             showPage('home');
+            updateCarouselMetrics();
         });
+
+        window.addEventListener('resize', updateCarouselMetrics);
+        setInterval(nextSlide, 8000);
 
         // Top Bar Shrink Logic
         window.addEventListener('scroll', () => {
