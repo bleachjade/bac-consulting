@@ -190,9 +190,6 @@
                         <button onclick="showPage('services')"
                             class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="services">Services</button>
-                        <button onclick="showPage('process')"
-                            class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
-                            data-target="process">Process</button>
                         <button onclick="showPage('blog')"
                             class="nav-link text-bac-text hover:text-bac-title font-medium transition text-[0.8rem] uppercase tracking-wide"
                             data-target="blog">Insights</button>
@@ -220,8 +217,6 @@
                     Us</button>
                 <button onclick="showPage('services'); toggleMobileMenu()"
                     class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Services</button>
-                <button onclick="showPage('process'); toggleMobileMenu()"
-                    class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Process</button>
                 <button onclick="showPage('blog'); toggleMobileMenu()"
                     class="block w-full text-left px-6 py-4 text-bac-text hover:bg-gray-50 font-medium border-b border-gray-100">Insights</button>
                 <button onclick="showPage('contact'); toggleMobileMenu()"
@@ -235,95 +230,128 @@
     <!-- PAGE 1: HOME -->
     <!-- ========================================== -->
     <main id="home" class="page-section active flex-grow">
-        <!-- Modern Hero Section -->
-        <section class="relative bg-white overflow-hidden pt-16 pb-8 lg:pt-24 lg:pb-24">
-            <div class="absolute right-0 top-0 w-1/2 h-full z-10 bg-white/80 block">
-            </div>
-            <div class="absolute inset-y-0 right-0 w-1/2 bg-gray-50 z-0 hidden lg:block">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline>
-                    <source src="istockphoto-2160472791-640_adpp_is.mp4" type="video/mp4">
-                </video>
-            </div>
+        <!-- Reimagined hero section with integrated video (Compact Version) -->
+        <section class="relative bg-white overflow-hidden pt-10 pb-12 lg:pt-16 lg:pb-16 border-b border-gray-100">
+            <!-- <div class="absolute right-0 top-0 w-full lg:w-1/2 h-full z-0 bg-gray-50/50"></div> -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <!-- Top Section: Text & Graphic -->
-                <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center mb-16">
-                    <!-- Text Side -->
-                    <div class="lg:col-span-6 text-left">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-10 items-center">
+
+                    <!-- Text side -->
+                    <div class="lg:col-span-6 text-left mb-10 lg:mb-0">
                         <div
-                            class="inline-block px-3 py-1 bg-blue-50 text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+                            class="inline-block px-3 py-1 bg-blue-50 text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-3">
                             Health care business consulting
                         </div>
-                        <h1 class="text-4xl lg:text-5xl font-extrabold text-bac-text tracking-tight mb-6 leading-tight">
+                        <h1 class="text-3xl lg:text-5xl font-extrabold text-bac-text tracking-tight mb-4 leading-tight">
                             Unlock the <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-bac-title to-bac-teal">True
                                 value</span> of your health practice
                         </h1>
-                        <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
-                            Are you an allied health practice owner looking to realise the full potential of
-                            your business? Do you want help from someone who understands the unique
-                            challenges and opportunities in this industry?
+                        <p class="text-base lg:text-lg text-gray-600 mb-6 leading-relaxed max-w-lg font-medium">
+                            Are you an allied health practice owner looking to realise the full potential of your
+                            business? Do you want help from someone who understands the unique challenges and
+                            opportunities in this industry?
                         </p>
-                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
                             <button onclick="showPage('contact')"
-                                class="px-8 py-4 bg-bac-title text-white rounded-lg hover:bg-bac-dark transition text-center font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                class="px-6 py-3.5 bg-bac-title text-white rounded-lg hover:bg-bac-dark transition text-center font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                 Book a consultation today
                             </button>
                         </div>
                     </div>
 
-                    <!-- Abstract Graphic Side -->
-                    <div class="lg:col-span-6 mt-12 lg:mt-0 relative">
-                        <div
-                            class="relative rounded-2xl bg-white shadow-2xl p-8 border border-gray-100 transform rotate-1 hover:rotate-0 transition duration-500">
-                            <div
-                                class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-bac-light rounded-full opacity-50 blur-xl">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 -mb-4 -ml-4 w-32 h-32 bg-bac-teal rounded-full opacity-30 blur-xl">
+                    <!-- Reimaged video & bullet side -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden relative">
+
+                            <!-- Video header -->
+                            <div class="bg-gray-900 group aspect-video relative overflow-hidden">
+                                <video src="Optimise with BAC Business Consulting.mp4"
+                                    class="w-full h-full object-cover" controls autoPlay muted loop playsInline
+                                    poster="https://placehold.co/1200x675/193546/ffffff?text=Video+Loading...">
+                                </video>
+                                <div
+                                    class="absolute top-4 left-4 bg-bac-title/90 backdrop-blur-md text-white text-[0.6rem] font-bold px-2 py-1 rounded uppercase tracking-widest shadow-sm">
+                                    A message from Ben
+                                </div>
                             </div>
 
-                            <h3 class="text-xl font-bold text-bac-text mb-6">The practice lifecycle</h3>
-                            <div class="space-y-6">
-                                <div class="flex items-start">
+                            <!-- Bullet credentials content -->
+                            <div class="p-4">
+                                <div class="flex items-center mb-4">
                                     <div
-                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
-                                        1</div>
-                                    <div class="ml-4">
-                                        <h4 class="text-lg font-bold text-gray-900">Transition</h4>
-                                        <p class="text-gray-500 text-sm">Shift from "doing the work" to "owning the
-                                            asset".</p>
+                                        class="w-8 h-8 bg-bac-title/10 rounded-full flex items-center justify-center text-bac-title mr-3 shadow-sm">
+                                        <i class="fas fa-award text-sm"></i>
+                                    </div>
+                                    <h3 class="text-base font-bold text-bac-text">Proven pathways to success</h3>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div
+                                        class="flex items-center p-2.5 bg-gray-50 rounded-xl border border-gray-100 group hover:border-bac-teal/30 transition duration-300">
+                                        <div
+                                            class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-bac-teal shadow-sm mr-3 group-hover:bg-bac-teal group-hover:text-white transition">
+                                            <i class="fas fa-check text-[10px]"></i>
+                                        </div>
+                                        <span class="text-[0.75rem] font-semibold text-gray-700">Build clinic and brand
+                                            from scratch</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center p-2.5 bg-gray-50 rounded-xl border border-gray-100 group hover:border-bac-teal/30 transition duration-300">
+                                        <div
+                                            class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-bac-teal shadow-sm mr-3 group-hover:bg-bac-teal group-hover:text-white transition">
+                                            <i class="fas fa-check text-[10px]"></i>
+                                        </div>
+                                        <span class="text-[0.75rem] font-semibold text-gray-700">Transition from
+                                            clinician to business owner</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center p-2.5 bg-gray-50 rounded-xl border border-gray-100 group hover:border-bac-teal/30 transition duration-300">
+                                        <div
+                                            class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-bac-teal shadow-sm mr-3 group-hover:bg-bac-teal group-hover:text-white transition">
+                                            <i class="fas fa-check text-[10px]"></i>
+                                        </div>
+                                        <span class="text-[0.75rem] font-semibold text-gray-700">Scale to multi-site
+                                            success and multi-disciplinary</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center p-2.5 bg-gray-50 rounded-xl border border-gray-100 group hover:border-bac-teal/30 transition duration-300">
+                                        <div
+                                            class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-bac-teal shadow-sm mr-3 group-hover:bg-bac-teal group-hover:text-white transition">
+                                            <i class="fas fa-check text-[10px]"></i>
+                                        </div>
+                                        <span class="text-[0.75rem] font-semibold text-gray-700">Protect and future
+                                            proof your legacy</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center p-2.5 bg-gray-50 rounded-xl border border-gray-100 group hover:border-bac-teal/30 transition duration-300">
+                                        <div
+                                            class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-bac-teal shadow-sm mr-3 group-hover:bg-bac-teal group-hover:text-white transition">
+                                            <i class="fas fa-check text-[10px]"></i>
+                                        </div>
+                                        <span class="text-[0.75rem] font-semibold text-gray-700">Maximise value and
+                                            prepare to sell</span>
                                     </div>
                                 </div>
-                                <div class="flex items-start">
+                            </div>
+
+                            <div class="bg-blue-50/50 p-3 border-t border-gray-100 flex items-center justify-between">
+                                <div class="flex items-center">
                                     <div
-                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
-                                        2</div>
-                                    <div class="ml-4">
-                                        <h4 class="text-lg font-bold text-gray-900">Scale</h4>
-                                        <p class="text-gray-500 text-sm">Expand to multi-site & multi-disciplinary
-                                            success.</p>
+                                        class="w-7 h-7 rounded-full overflow-hidden bg-gray-200 border border-white mr-3">
+                                        <img src="donbrice-8348.jpg" alt="Ben Corso" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <p
+                                            class="text-[0.55rem] uppercase tracking-widest font-bold text-gray-400 leading-none">
+                                            Consult with</p>
+                                        <p class="text-xs font-bold text-bac-text leading-tight">Ben Corso</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center mb-6">
-                                    <div
-                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
-                                        3</div>
-                                    <div class="ml-4">
-                                        <h4 class="text-lg font-bold text-gray-900 leading-tight">Protect and future
-                                            proof YOUR legacy
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div
-                                        class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center text-bac-title font-bold">
-                                        4</div>
-                                    <div class="ml-4">
-                                        <h4 class="text-lg font-bold text-gray-900">Exit</h4>
-                                        <p class="text-gray-500 text-sm">Maximise EBITDA multiples and sell with
-                                            confidence.</p>
-                                    </div>
-                                </div>
+                                <button onclick="showPage('about')"
+                                    class="text-[0.7rem] font-bold text-bac-title hover:text-bac-dark flex items-center">
+                                    Learn more <i class="fas fa-chevron-right ml-1.5"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -380,81 +408,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Video Intro Section -->
-        <section class="py-8 md:py-20 bg-white border-b border-gray-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Left: Video Player -->
-                    <div
-                        class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 group h-[250px] md:h-[350px] mt-6 flex items-center justify-center border-4 border-white transform transition duration-500 hover:shadow-3xl">
-                        <video src="Optimise with BAC Business Consulting.mp4" class="w-full h-full object-cover"
-                            controls autoPlay muted loop playsInline
-                            poster="https://placehold.co/1200x675/193546/ffffff?text=Video+Loading...">
-                        </video>
-                    </div>
-
-                    <!-- Right: Transcript & Message -->
-                    <div>
-                        <div class="flex items-center mb-6">
-                            <div
-                                class="h-12 w-12 rounded-full bg-bac-title flex items-center justify-center text-white mr-4 shadow-md">
-                                <i class="fas fa-quote-left text-xl"></i>
-                            </div>
-                            <div>
-                                <h2 class="text-2xl font-bold text-bac-text">A message from Ben Corso</h2>
-                                <p class="text-sm text-bac-teal font-medium uppercase tracking-wide">Founder & principal
-                                    consultant</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-inner relative">
-                            <p
-                                class="text-md md:text-lg text-gray-700 italic mb-6 leading-relaxed font-serif relative z-10">
-                                "Hi, I’m Ben Corso. With over 30 years in physiotherapy and Allied Health, I’ve been in
-                                your shoes. I know the industry inside out, and I’m here to give you proven strategies
-                                to grow, scale, and sell for the highest price."
-                            </p>
-
-                            <div class="space-y-3">
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Build clinic and brand from
-                                        scratch</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Transition from clinician to
-                                        business owner</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Scale to multi-site success and
-                                        multi-disciplinary</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Protect and future proof your
-                                        legacy</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle text-bac-teal mr-3 text-lg"></i>
-                                    <span class="text-gray-700 font-medium text-sm">Maximise value and prepare to
-                                        sell</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-8">
-                            <button onclick="showPage('about')"
-                                class="text-bac-title font-bold hover:text-bac-dark flex items-center transition">
-                                Read full story <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Problem/Solution Section -->
         <section class="py-8 md:py-24 bg-white relative overflow-hidden">
@@ -971,7 +924,7 @@
                 </div>
                 <div class="flex justify-center items-center mt-16">
                     <a href="3064582 BAC WEB 300dpi.jpg" target="_blank"
-                        class="underline text-bac-title font-bold hover:text-bac-dark flex items-center transition">View
+                        class="underline text-bac-title font-bold hover:text-bac-dark flex items-center transition text-xl">View
                         our full timeline</a>
                 </div>
             </div>
@@ -1103,37 +1056,54 @@
         <!-- Image Gallery / Impact Section (New) -->
         <section class="py-12 bg-white border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
-                        <img src="https://media.istockphoto.com/id/1385970223/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%94%E0%B8%B5%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%81%E0%B8%A5%E0%B8%A2%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C.jpg?s=2048x2048&w=is&k=20&c=dUAolmDJcpCD3zv10fJPTI1Jyai8KwKW8Xqu2cUEAGM="
-                            alt="Strategic Planning"
+                <div class="grid md:grid-cols-5 gap-4">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-40">
+                        <img src="https://media.istockphoto.com/id/2170938088/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%97%E0%B8%B5%E0%B8%A1%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B9%8D%E0%B8%B2%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%A5%E0%B8%A2%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B9%8C%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B9%80%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B9%83%E0%B8%99%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81.jpg?s=2048x2048&w=is&k=20&c=hhpAMNnMiDxTRvOp0lOyTcmQbATGOcBXoy7BY9eB0sw="
+                            alt="Build clinic and brand from scratch"
                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <span class="text-white font-bold text-lg">Strategic Planning</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <span class="text-white font-bold text-md">Build clinic and brand from scratch</span>
                         </div>
                     </div>
-                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-40">
                         <img src="https://media.istockphoto.com/id/2058319417/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%83%E0%B8%9A%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%82%E0%B8%A7%E0%B9%89%E0%B9%81%E0%B8%82%E0%B8%99%E0%B8%A2%E0%B8%B4%E0%B9%89%E0%B8%A1%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B9%8D%E0%B8%B2%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%9C.jpg?s=2048x2048&w=is&k=20&c=ZIBroCCDVqD3CTfXa03NsbFf770NjU-yLEo7r82gglE="
-                            alt="Operational Efficiency"
+                            alt="Transition from clinician to business owner"
                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <span class="text-white font-bold text-lg">Operational Efficiency</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <span class="text-white font-bold text-md">Transition from clinician to business
+                                owner</span>
                         </div>
                     </div>
-                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-64">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-40">
+                        <img src="https://media.istockphoto.com/id/1214655227/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%B8%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%9A%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B9%80%E0%B8%A3%E0%B9%87%E0%B8%88%E0%B9%83%E0%B8%99%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%AB%E0%B9%89%E0%B8%AD.jpg?s=2048x2048&w=is&k=20&c=WuOUHHWzwr47zPnxpkVOEBEiUVBS7QljcOLSLL_IVkQ="
+                            alt="Scale to multi-site success"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <span class="text-white font-bold text-md">Scale to multi-site success</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-40">
+                        <img src="https://media.istockphoto.com/id/1455751402/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%9B%E0%B8%81%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AB%E0%B8%A2%E0%B8%B8%E0%B8%94%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B9%82%E0%B8%94%E0%B8%A1%E0%B8%B4%E0%B9%82%E0%B8%99%E0%B8%A5%E0%B9%89%E0%B8%A1%E0%B8%9A%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%87%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B4.jpg?s=2048x2048&w=is&k=20&c=ZkD3jZ0psZm0C0gQOe9YSX-jp-l3REc5qBWxSVbf9N8="
+                            alt="Protect and future proof your legacy"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <span class="text-white font-bold text-md">Protect and future proof your legacy</span>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md h-40">
                         <img src="https://media.istockphoto.com/id/1407488333/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B5%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%96%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%AB%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%8D%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B8%9A%E0%B9%82%E0%B8%95%E0%B8%9A%E0%B8%99%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-%E0%B9%81%E0%B8%99%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%94%E0%B9%83%E0%B8%99.jpg?s=2048x2048&w=is&k=20&c=fuOYDyCjPyL2zL9TAxNkShNiBsoTK1hMc-8McTCuQ_A="
                             alt="Maximising Value"
                             class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <span class="text-white font-bold text-lg">Maximising Value</span>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <span class="text-white font-bold text-md">Maximising Value</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="mt-6 mb-2">
                 <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget"
-                    data-url="https://calendly.com/ben-bacbusinessconsulting/business-health-check?hide_gdpr_banner=1&text_color=193546&primary_color=008ecf"
+                <div class="calendly-inline-widget w-full"
+                    data-url="https://calendly.com/ben-bacbusinessconsulting/website-contact-form?hide_gdpr_banner=1&text_color=193546&primary_color=008ecf"
                     style="min-width:320px;height:700px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
                     async></script>
@@ -1143,78 +1113,6 @@
         <!-- Testimonials (Carousel Wrapper - Same logic as Home) -->
         <section id="services-testimonial-section" class="py-24 bg-gray-50 overflow-hidden">
             <!-- Content will be injected via renderTestimonials() -->
-        </section>
-    </main>
-
-    <!-- ========================================== -->
-    <!-- PAGE: PROCESS -->
-    <!-- ========================================== -->
-    <main id="process" class="page-section flex-grow">
-        <section class="pt-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Process Hero Split -->
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <div>
-                        <div
-                            class="inline-block px-3 py-1 bg-blue-50 text-bac-title rounded-full text-xs font-bold uppercase tracking-wider mb-6 border border-blue-100 shadow-sm">
-                            The Roadmap
-                        </div>
-                        <h1 class="text-4xl font-bold text-bac-text mb-6">Sale preparation roadmap</h1>
-                        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                            Selling your practice is a journey, not an event. We use a structured 9-step process to
-                            maximise your business value and ensure a seamless exit.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Visual Phase Grid -->
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <!-- Phase 1 Image -->
-                    <div class="relative group rounded-xl overflow-hidden shadow-lg h-64 border border-gray-100">
-                        <img src="https://media.istockphoto.com/id/2203914027/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%8D%E0%B8%B2%E0%B9%80%E0%B8%AA%E0%B8%99%E0%B8%AD%E0%B8%97%E0%B8%B5%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%99%E0%B9%8D%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B2%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%83%E0%B8%99%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%A2.jpg?s=2048x2048&w=is&k=20&c=DT2CwOhaE1KlOCVaKAbUkRZoQ8t3jR_kWq_ORSxqZic="
-                            alt="Preparation Phase"
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-bac-light/60 to-transparent flex flex-col justify-end p-6">
-                            <span class="text-white text-xs font-bold uppercase tracking-wider mb-1">Phase 1</span>
-                            <h3 class="text-white font-bold text-xl">Preparation</h3>
-                        </div>
-                    </div>
-                    <!-- Phase 2 Image -->
-                    <div class="relative group rounded-xl overflow-hidden shadow-lg h-64 border border-gray-100">
-                        <img src="https://media.istockphoto.com/id/2073485467/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%A1%E0%B8%AA%E0%B8%A1%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B4%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B8%AB%E0%B9%8C%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%A0%E0%B8%B9.jpg?s=2048x2048&w=is&k=20&c=vZxZpB-zcBw3Pwr3PmSkF5Bev5uBvu5AHEG7Jj2psOs="
-                            alt="Strategy Phase"
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-bac-title/60 to-transparent flex flex-col justify-end p-6">
-                            <span class="text-white text-xs font-bold uppercase tracking-wider mb-1">Phase 2</span>
-                            <h3 class="text-white font-bold text-xl">Strategy</h3>
-                        </div>
-                    </div>
-                    <!-- Phase 3 Image -->
-                    <div class="relative group rounded-xl overflow-hidden shadow-lg h-64 border border-gray-100">
-                        <img src="https://media.istockphoto.com/id/2184295789/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%88%E0%B8%B1%E0%B8%9A%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B9%83%E0%B8%99%E0%B8%AA%E0%B9%8D%E0%B8%B2%E0%B8%99%E0%B8%B1%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%99.jpg?s=2048x2048&w=is&k=20&c=ccSm_xLb7J3PNo47A-AmttPBrDUVJN9Y-vSrs9dvUjY="
-                            alt="Execution Phase"
-                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-bac-teal/60 to-transparent flex flex-col justify-end p-6">
-                            <span class="text-white text-xs font-bold uppercase tracking-wider mb-1">Phase 3</span>
-                            <h3 class="text-white font-bold text-xl">Execution</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 md:pb-16">
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                        <div
-                            class="relative w-full rounded-xl overflow-hidden shadow-2xl border border-gray-200 bg-white">
-                            <!-- Timeline Image -->
-                            <img src="null" alt="Sale Placeholder Form" class="w-full h-auto object-cover"
-                                onerror="this.onerror=null; this.src='https://placehold.co/1200x600/f1f5f9/1e293b?text=Sale Placeholder Form placeholder';">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </section>
     </main>
 
@@ -1483,8 +1381,6 @@
                 <div>
                     <h4 class="font-bold mb-4 text-bac-light">Resources</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
-                        <li><button onclick="showPage('process')" class="hover:text-white transition">Sales
-                                process</button></li>
                         <li><button onclick="showPage('disclaimer')"
                                 class="hover:text-white transition">Disclaimer</button></li>
                         <li><button onclick="showPage('privacy')" class="hover:text-white transition">Privacy
